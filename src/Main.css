@@ -1,0 +1,364 @@
+body div.brand-news {
+  background-image: url(../public/image/article_bg.png);
+  padding: 100px 0 100px 0;
+  height: 1000px;
+  background-repeat: no-repeat;
+}
+body div.brand-news div.brand-news-title {
+  padding: 90px 50px 0 50px;
+  display: flex;
+  justify-content: space-between;
+}
+body
+  div.brand-news
+  div.brand-news-title
+  div.brand-news-tit
+  div.brand-news-fort-title {
+  display: flex;
+}
+body
+  div.brand-news
+  div.brand-news-title
+  div.brand-news-tit
+  div.brand-news-fort-title
+  h2 {
+  transform: translateY(-50%);
+  width: 26%;
+  margin: 0 auto;
+  color: #363636;
+  font-size: 30px;
+  font-weight: 600;
+  font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+  letter-spacing: 4px;
+}
+body
+  div.brand-news
+  div.brand-news-title
+  div.brand-news-tit
+  div.brand-news-fort-title
+  div.footline {
+  transform: translateY(-50%);
+  position: relative;
+}
+body
+  div.brand-news
+  div.brand-news-title
+  div.brand-news-tit
+  div.brand-news-fort-title
+  div.footline
+  div.line {
+  background-image: url(../public/image/title_line.png);
+  width: 80%;
+  height: 150%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+body
+  div.brand-news
+  div.brand-news-title
+  div.brand-news-tit
+  div.brand-news-fort-title
+  div.footline
+  div.foot {
+  transform: translateY(-100%);
+  background-image: url(../public/image/foot.png);
+  width: 80%;
+  height: 150%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  overflow: hidden;
+  position: absolute;
+  clip-path: inset(0 100% 0 0);
+  opacity: 0;
+  animation: footanimation 10s infinite forwards;
+}
+body
+  div.brand-news
+  div.brand-news-title
+  div.brand-news-tit
+  div.brand-news-back-title {
+  width: 80%;
+}
+body div.brand-news div.brand-news-title div.button {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 15%;
+}
+body div.brand-news div.brand-news-title div.button button.viewmore-button {
+  width: 100%;
+  height: 150%;
+  font-size: 20px;
+  font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+  color: #626e45;
+  background-color: #ffffff00;
+  border: 2px solid #626e45;
+  border-style: dashed;
+  border-width: 1px;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body
+  div.brand-news
+  div.brand-news-title
+  div.button
+  button.viewmore-button:hover {
+  background-color: #626e45;
+  color: #ffffff;
+  animation: shadowSpreadContinuous 0.9s linear infinite;
+}
+body div.brand-news div.brand-news-title div.brand-news-back-title {
+  color: rgba(176, 180, 157, 0.15);
+  font-size: 55px;
+  letter-spacing: 10.4px;
+  line-height: 0;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: rgba(98, 110, 69, 0.15);
+  text-transform: uppercase;
+  padding-bottom: 0;
+}
+body div.brand-news div.brand-news-allcontect {
+  padding: 0 70px 0 0;
+  width: 100%;
+  height: 70%;
+}
+body div.brand-news div.brand-news-allcontect div.brand-news-contect {
+  height: 100%;
+  margin-top: 70px;
+  padding: 90px 0 0 0;
+  border-radius: 0 35px 0 0;
+  background-color: #ffffff;
+  display: flex;
+  overflow: hidden;
+}
+body
+  div.brand-news
+  div.brand-news-allcontect
+  div.brand-news-contect
+  div.brand-news-txtbox {
+  display: flex;
+  justify-content: space-evenly;
+  width: 92%;
+}
+body
+  div.brand-news
+  div.brand-news-allcontect
+  div.brand-news-contect
+  div.brand-news-txtbox
+  div.item {
+  width: 35%;
+  height: 100%;
+  position: relative;
+}
+body
+  div.brand-news
+  div.brand-news-allcontect
+  div.brand-news-contect
+  div.brand-news-txtbox
+  div.item
+  div.brand-news-contect-first-title {
+  color: #626e45;
+  font-size: 18px;
+  font-weight: 400;
+  border-radius: 9999px;
+  background-color: #f1efe8;
+  display: inline-block;
+  padding: 5.5px 20px 7.5px 22px;
+  margin-bottom: 25px;
+  width: 27%;
+}
+body
+  div.brand-news
+  div.brand-news-allcontect
+  div.brand-news-contect
+  div.brand-news-txtbox
+  div.item
+  div.brand-news-contect-sec-title {
+  color: #626e45;
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: 2.4px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+body
+  div.brand-news
+  div.brand-news-allcontect
+  div.brand-news-contect
+  div.brand-news-txtbox
+  div.item
+  div.brand-news-contect-txt {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.866;
+  letter-spacing: 1.95px;
+  height: 56px;
+  margin-top: 8px;
+  font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+  overflow: hidden;
+}
+body
+  div.brand-news
+  div.brand-news-allcontect
+  div.brand-news-contect
+  div.brand-news-txtbox
+  div.item
+  div.image-box {
+  border-radius: 10% 10% 10% 10%;
+  position: relative;
+}
+body
+  div.brand-news
+  div.brand-news-allcontect
+  div.brand-news-contect
+  div.brand-news-txtbox
+  div.item
+  div.icon
+  img {
+  border-radius: 10% 10% 10% 10%;
+  position: relative;
+  z-index: 2;
+}
+body
+  div.brand-news
+  div.brand-news-allcontect
+  div.brand-news-contect
+  div.brand-news-txtbox
+  div.item:hover
+  div.image-background {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+  background-color: #7c8b57a1;
+  transform: rotate(-5deg);
+  border-radius: 10% 10% 10% 10%;
+  box-shadow: 4px 10px 20px 5px rgba(0, 0, 0, 0.2);
+}
+
+body div.brand-news div.brand-news-allcontect div.brand-news-contect div.a {
+  width: 9%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2;
+}
+
+body
+  div.brand-news
+  div.brand-news-allcontect
+  div.brand-news-contect
+  div.a
+  div.page-number {
+  width: 10%;
+  margin: 10px;
+  font-size: 25px;
+  text-transform: uppercase;
+  color: rgb(153, 153, 153);
+}
+
+body
+  div.brand-news
+  div.brand-news-allcontect
+  div.brand-news-contect
+  div.a
+  progress {
+  margin: 10px;
+  height: 200px; /* 設定高度 */
+  width: 8px; /* 設定進度條的寬度 */
+  border-radius: 20px;
+  background-color: #d4d5c7;
+  appearance: none;
+  writing-mode: tb-rl; /* 設置進度條為垂直方向 */
+}
+/* 設置進度條背景色 */
+body
+  div.brand-news
+  div.brand-news-allcontect
+  div.brand-news-contect
+  div.a
+  progress::-webkit-progress-bar {
+  background-color: #d4d5c7;
+  border-radius: 20px;
+}
+
+/* 設置進度條顏色 */
+body
+  div.brand-news
+  div.brand-news-allcontect
+  div.brand-news-contect
+  div.a
+  progress::-webkit-progress-value {
+  background-color: #626e45;
+  border-radius: 20px;
+  transition: height 0.5s ease-in-out, background-color 0.3s ease-in-out;
+}
+body
+  div.brand-news
+  div.brand-news-allcontect
+  div.brand-news-contect
+  div.a
+  div.pagebutton {
+  height: 35%;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+button.probtn,
+button.nextbtn {
+  width: 60px;
+  height: 60px;
+  font-size: 32px;
+  background: #626e45;
+  color: white;
+  text-align: center;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+}
+
+button.probtn:hover,
+button.nextbtn:hover {
+  background-color: #4a5d33;
+}
+
+@keyframes shadowSpreadContinuous {
+  0% {
+    box-shadow: 0 0 1px 0px #626e458f, 0 0 1px 0px #626e4526,
+      0 0 1px 0px #626e4512;
+  }
+  100% {
+    box-shadow: 0 0 1px 10px transparent, 0 0 1px 20px transparent,
+      0 0 1px 30px transparent;
+  }
+}
+
+@keyframes footanimation {
+  0% {
+    clip-path: inset(0 100% 0 0); /* 開始時圖片完全隱藏 */
+    opacity: 0; /* 開始時透明 */
+  }
+  33% {
+    clip-path: inset(0 0 0 0); /* 33% 時，圖片完全顯示 */
+    opacity: 1; /* 圖片完全顯示 */
+  }
+  66% {
+    clip-path: inset(0 0 0 0); /* 66% 時，圖片保持顯示 */
+    opacity: 1; /* 圖片保持顯示 */
+  }
+  100% {
+    clip-path: inset(0 0 0 0); /* 100% 時，圖片保持顯示 */
+    opacity: 0; /* 圖片慢慢變透明 */
+  }
+}

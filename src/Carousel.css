@@ -1,0 +1,43 @@
+.carousel-container {
+  text-align: center;
+  width: 100%;
+}
+
+.carousel-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden; /* 隱藏不在視窗內的內容 */
+}
+
+.carousel-slides {
+  width: 400%;
+  display: flex;
+  transition: transform 0.5s ease; /* 更平滑的過渡效果 */
+}
+
+.carousel-slide {
+  height: 300px;
+}
+
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.carousel-button-left {
+  left: 10px;
+}
+
+.carousel-button-right {
+  right: 10px;
+}

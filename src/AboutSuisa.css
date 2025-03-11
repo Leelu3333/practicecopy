@@ -1,0 +1,180 @@
+body div.about-SUISA {
+  padding: 0 0 100px 0;
+  width: 100%;
+}
+body div.about-SUISA div.databox {
+  display: flex;
+  padding: 0 30px 0 30px;
+}
+body div.about-SUISA div.databox div.databox-mid {
+  display: flex;
+  justify-content: center;
+  padding: 0 30px 0 20px;
+}
+body div.about-SUISA div.databox div.databox-mid div.about-txt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body
+  div.about-SUISA
+  div.databox
+  div.databox-mid
+  div.about-txt
+  div.about-txt-fort-title {
+  position: relative;
+  left: 0;
+  right: 0;
+  top: -9%;
+}
+body
+  div.about-SUISA
+  div.databox
+  div.databox-mid
+  div.about-txt
+  div.about-txt-fort-title
+  h2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  color: #363636;
+  font-size: 30px;
+  font-weight: 600;
+  font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+  letter-spacing: 4px;
+}
+body
+  div.about-SUISA
+  div.databox
+  div.databox-mid
+  div.about-txt
+  div.about-txt-back-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(176, 180, 157, 0.15);
+  font-size: 55px;
+  letter-spacing: 10.4px;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: rgba(98, 110, 69, 0.15);
+  text-transform: uppercase;
+  padding-bottom: 0;
+}
+body
+  div.about-SUISA
+  div.databox
+  div.databox-mid
+  div.about-txt
+  div.about-txt-first-title
+  h3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #626e45;
+  line-height: normal;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 5px;
+  text-align: center;
+}
+body
+  div.about-SUISA
+  div.databox
+  div.databox-mid
+  div.about-txt
+  div.about-txt-sec-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666666;
+  font-size: 16px;
+  letter-spacing: 1.95px;
+  padding: 12px 0 25px 0;
+  text-align: center;
+}
+body
+  div.about-SUISA
+  div.databox
+  div.databox-mid
+  div.about-txt
+  div.about-txt-content {
+  display: flex;
+  flex-direction: column;
+}
+body
+  div.about-SUISA
+  div.databox
+  div.databox-mid
+  div.about-txt
+  div.about-txt-content
+  p {
+  color: #666666;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 1.95px;
+  font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+  line-height: 1.8;
+  text-align: center;
+}
+body div.about-SUISA div.databox div.databox-mid div.about-txt div.button {
+  margin: 80px auto 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+body
+  div.about-SUISA
+  div.databox
+  div.databox-mid
+  div.about-txt
+  div.button
+  button.viewmore-button {
+  width: 40%;
+  height: 200%;
+  font-size: 20px;
+  font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+  border-radius: 9999px;
+  border: 2px solid #626e45;
+  border-style: dashed;
+  border-width: 1px;
+  border-radius: 9999px;
+  color: #626e45;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body
+  div.about-SUISA
+  div.databox
+  div.databox-mid
+  div.about-txt
+  div.button
+  button.viewmore-button:hover {
+  background-color: #626e45;
+  color: #ffffff;
+  animation: shadowSpreadContinuous 0.9s linear infinite;
+}
+body div.about-SUISA div.databox div.databox-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body div.about-SUISA div.databox div.databox-left img {
+  border-radius: 50px;
+  aspect-ratio: 1/1;
+  width: 85%;
+}
+body div.about-SUISA div.databox div.databox-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body div.about-SUISA div.databox div.databox-right img {
+  border-radius: 50px;
+  aspect-ratio: 1/1;
+  width: 90%;
+  height: 70%;
+}

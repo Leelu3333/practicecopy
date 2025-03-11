@@ -1,0 +1,177 @@
+header {
+  background-color: #ffffff;
+  border-radius: 9999px;
+  position: fixed;
+  left: 2.5%;
+  top: 27px;
+  width: 95%;
+  height: 15%;
+  z-index: 50;
+  padding: 0 20px 0 20px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1098039216);
+}
+body header div.logo {
+  width: 22%;
+  height: 100%;
+  display: flex;
+  /* padding: 0 10px 0 10px; */
+  align-items: center;
+}
+body header div.logo a {
+  text-align: center;
+}
+body header div.logo a img {
+  width: 85%;
+}
+/* body header nav {
+  width: 60%;
+} */
+body header nav ul {
+  display: flex;
+  padding: 0 30px 0 30px;
+}
+body header nav ul li {
+  list-style-type: none;
+  margin: 0.5rem;
+  text-align: center;
+}
+body header nav ul li a {
+  color: black;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+}
+body header nav ul li a span.a {
+  color: #363636;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 1.6px;
+}
+body header nav ul li a span.b {
+  color: #999999;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.3px;
+  margin-top: 5px;
+}
+body header div.languageandsales {
+  display: flex;
+  justify-content: space-between;
+  width: 40%;
+  height: 70%;
+}
+body header div.languageandsales div.language {
+  width: 48%;
+}
+body header div.languageandsales div.language-title {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  border: 2px solid #626e45;
+  border-style: dashed;
+  border-width: 1px;
+  border-radius: 9999px;
+  color: #626e45;
+  background-color: #ffffff;
+}
+
+body header div.languageandsales div.language-title:hover {
+  background-color: #626e45;
+  color: #ffffff;
+  animation: shadowSpreadContinuous 0.9s linear infinite;
+}
+
+@keyframes shadowSpreadContinuous {
+  0% {
+    box-shadow: 0 0 1px 0px #626e458f, 0 0 1px 0px #626e4526,
+      0 0 1px 0px #626e4512;
+  }
+  100% {
+    box-shadow: 0 0 1px 10px transparent, 0 0 1px 20px transparent,
+      0 0 1px 30px transparent;
+  }
+}
+body header div.languageandsales div.language div.language-content {
+  width: 100%;
+  overflow: hidden;
+  max-height: 0;
+  transition: all 0.3s ease-in-out;
+  box-sizing: border-box;
+}
+#state:checked ~ .language-content {
+  max-height: 200px;
+}
+
+body
+  header
+  div.languageandsales
+  div.language
+  div.language-content
+  div.language-ch,
+div.language-en {
+  margin: 16px 0 0 0;
+  height: 50px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  border: 2px solid #626e45;
+  border-width: 1px;
+  border-radius: 9999px;
+  color: #626e45;
+  background-color: #ffffff;
+}
+body
+  header
+  div.languageandsales
+  div.language
+  div.language-content
+  div.language-ch {
+  border-width: 1px;
+  border-radius: 9999px;
+  color: #ffffff;
+  background-color: #626e45;
+}
+body
+  header
+  div.languageandsales
+  div.language
+  div.language-content
+  div.language-en {
+  border: 0;
+  border-width: 1px;
+  border-radius: 9999px;
+  color: #626e45;
+  background-color: #ffffff;
+  transition-duration: 0.4s;
+}
+body
+  header
+  div.languageandsales
+  div.language
+  div.language-content
+  div.language-en:hover {
+  color: #ffffff;
+  background-color: #626e45;
+}
+
+body header div.languageandsales a.sales {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  width: 48%;
+  border: none;
+  border-radius: 9999px;
+  background-color: #626e45;
+  color: white;
+  transition-duration: 0.4s;
+}
+body header div.languageandsales a.sales:hover {
+  opacity: 0.7;
+}

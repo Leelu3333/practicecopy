@@ -1,0 +1,157 @@
+body div.footer-area {
+  background-color: #626e45;
+  padding: 0 0 20px 0;
+}
+body div.footer-area div.footer-img {
+  background-image: url(../public/image/footer_shape.png);
+  width: 100%;
+  height: 100px;
+  background-size: cover;
+  background-position: 54% center;
+  background-repeat: no-repeat;
+}
+body div.footer-area div.data-top {
+  padding: 0 30px 0 30px;
+  width: 100%;
+}
+body div.footer-area div.data-top div.footer-menu {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: solid white;
+  padding-bottom: 20px;
+}
+body div.footer-area div.data-top div.footer-menu div.logo {
+  width: 15%;
+  height: 100%;
+  padding: 0 10px 0 15px;
+}
+body div.footer-area div.data-top div.footer-menu div.logo a img {
+  width: 85%;
+  filter: grayscale(1) brightness(100);
+}
+body div.footer-area div.data-top div.footer-menu nav {
+  width: 70%;
+}
+body div.footer-area div.data-top div.footer-menu nav ul {
+  display: flex;
+  padding: 0 30px 0 30px;
+}
+body div.footer-area div.data-top div.footer-menu nav ul li {
+  list-style-type: none;
+  margin: 1rem;
+  text-align: center;
+}
+body div.footer-area div.data-top div.footer-menu nav ul li a {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+}
+body div.footer-area div.data-top div.footer-menu nav ul li a span.a {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: 1.6px;
+}
+body div.footer-area div.data-top div.footer-menu nav ul li a span.b {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.3px;
+  margin-top: 5px;
+}
+body div.footer-area div.data-mid {
+  width: 100%;
+  padding: 30px 30px 0 30px;
+  display: flex;
+}
+body div.footer-area div.data-mid div.mid-area {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: solid white;
+  padding-bottom: 20px;
+}
+body div.footer-area div.data-mid div.mid-area div.leftbox {
+  width: 50%;
+}
+body div.footer-area div.data-mid div.mid-area div.leftbox ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+body div.footer-area div.data-mid div.mid-area div.leftbox ul li {
+  padding: 10px 10px 10px 10px;
+  width: 40%;
+  margin-bottom: 0;
+  list-style-type: none;
+}
+body div.footer-area div.data-mid div.mid-area div.leftbox ul li div.infotitle {
+  width: 32%;
+  margin-bottom: 16px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 16px;
+  font-weight: 400;
+  font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+  letter-spacing: 1.6px;
+  position: relative;
+}
+body div.footer-area div.data-mid div.mid-area div.leftbox ul li a {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 16px;
+  font-weight: 400;
+  font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+  letter-spacing: 1.6px;
+  position: relative;
+  text-decoration: none;
+}
+body div.footer-area div.data-mid div.mid-area div.rightbox {
+  width: 50%;
+}
+body div.footer-area div.data-mid div.mid-area div.rightbox div.rightbox-title {
+  color: rgba(255, 255, 255, 0.6);
+  padding: 10px 10px 16px 75px;
+  margin-bottom: 2px;
+  text-align: left;
+}
+body div.footer-area div.data-mid div.mid-area div.rightbox div.databox {
+  width: 80%;
+  height: 20px;
+  background-color: #ffffff;
+}
+body div.footer-area div.data-bottom {
+  width: 100%;
+  padding: 30px 30px 55px 30px;
+  display: flex;
+}
+body div.footer-area div.data-bottom div.leftbox {
+  width: 65%;
+  display: flex;
+}
+body div.footer-area div.data-bottom div.leftbox span {
+  color: #e0e2da;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-family: "Maven Pro", Graduate, Noto Sans TC, Microsoft JhengHei,
+    sans-serif;
+  letter-spacing: 1.4px;
+}
+body div.footer-area div.data-bottom div.leftbox div.ibestLink {
+  margin-left: 15px;
+}
+body div.footer-area div.data-bottom div.leftbox div.ibestLink a {
+  text-decoration: none;
+  color: #e0e2da;
+}
+body div.footer-area div.data-bottom div.rightbox {
+  width: 35%;
+  display: flex;
+}
+body div.footer-area div.data-bottom div.rightbox div.vtBox {
+  color: #e0e2da;
+}
+body div.footer-area div.data-bottom div.rightbox div.socialTitle {
+  color: #e0e2da;
+}
