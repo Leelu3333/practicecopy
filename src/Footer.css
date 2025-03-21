@@ -10,6 +10,7 @@ body div.footer-area div.footer-img {
   background-position: 54% center;
   background-repeat: no-repeat;
 }
+/* 上方資料 */
 body div.footer-area div.data-top {
   padding: 0 30px 0 30px;
   width: 100%;
@@ -22,6 +23,7 @@ body div.footer-area div.data-top div.footer-menu {
   border-bottom: solid white;
   padding-bottom: 20px;
 }
+/* logo */
 body div.footer-area div.data-top div.footer-menu div.logo {
   width: 15%;
   height: 100%;
@@ -31,6 +33,7 @@ body div.footer-area div.data-top div.footer-menu div.logo a img {
   width: 85%;
   filter: grayscale(1) brightness(100);
 }
+/* 頁尾導覽列 */
 body div.footer-area div.data-top div.footer-menu nav {
   width: 70%;
 }
@@ -62,6 +65,7 @@ body div.footer-area div.data-top div.footer-menu nav ul li a span.b {
   letter-spacing: 1.3px;
   margin-top: 5px;
 }
+/* 中間資料 */
 body div.footer-area div.data-mid {
   width: 100%;
   padding: 30px 30px 0 30px;
@@ -74,6 +78,7 @@ body div.footer-area div.data-mid div.mid-area {
   border-bottom: solid white;
   padding-bottom: 20px;
 }
+/* 中間資料-左 */
 body div.footer-area div.data-mid div.mid-area div.leftbox {
   width: 50%;
 }
@@ -107,6 +112,7 @@ body div.footer-area div.data-mid div.mid-area div.leftbox ul li a {
   position: relative;
   text-decoration: none;
 }
+/* 中間資料-右 */
 body div.footer-area div.data-mid div.mid-area div.rightbox {
   width: 50%;
 }
@@ -121,11 +127,13 @@ body div.footer-area div.data-mid div.mid-area div.rightbox div.databox {
   height: 20px;
   background-color: #ffffff;
 }
+/* 下方資料 */
 body div.footer-area div.data-bottom {
   width: 100%;
   padding: 30px 30px 55px 30px;
   display: flex;
 }
+/* 下方資料-左 */
 body div.footer-area div.data-bottom div.leftbox {
   width: 65%;
   display: flex;
@@ -145,6 +153,7 @@ body div.footer-area div.data-bottom div.leftbox div.ibestLink a {
   text-decoration: none;
   color: #e0e2da;
 }
+/* 下方資料-右 */
 body div.footer-area div.data-bottom div.rightbox {
   width: 35%;
   display: flex;

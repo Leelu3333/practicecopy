@@ -4,11 +4,13 @@ body div.brand-news {
   height: 1000px;
   background-repeat: no-repeat;
 }
+/* 標題(含前後字) */
 body div.brand-news div.brand-news-title {
   padding: 90px 50px 0 50px;
   display: flex;
   justify-content: space-between;
 }
+/* 標題-品牌動態文章 */
 body
   div.brand-news
   div.brand-news-title
@@ -31,6 +33,7 @@ body
   font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
   letter-spacing: 4px;
 }
+/* 狗狗腳印與虛線 */
 body
   div.brand-news
   div.brand-news-title
@@ -40,6 +43,7 @@ body
   transform: translateY(-50%);
   position: relative;
 }
+/* 虛線 */
 body
   div.brand-news
   div.brand-news-title
@@ -54,6 +58,7 @@ body
   background-size: contain;
   background-position: center;
 }
+/* 狗狗腳印 */
 body
   div.brand-news
   div.brand-news-title
@@ -74,13 +79,23 @@ body
   opacity: 0;
   animation: footanimation 10s infinite forwards;
 }
+/* 標題-ARTICLE */
 body
   div.brand-news
   div.brand-news-title
   div.brand-news-tit
   div.brand-news-back-title {
   width: 80%;
+  color: rgba(176, 180, 157, 0.15);
+  font-size: 55px;
+  letter-spacing: 10.4px;
+  line-height: 0;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: rgba(98, 110, 69, 0.15);
+  text-transform: uppercase;
+  padding-bottom: 0;
 }
+/* 看更多按鈕 */
 body div.brand-news div.brand-news-title div.button {
   display: flex;
   justify-content: center;
@@ -111,21 +126,13 @@ body
   color: #ffffff;
   animation: shadowSpreadContinuous 0.9s linear infinite;
 }
-body div.brand-news div.brand-news-title div.brand-news-back-title {
-  color: rgba(176, 180, 157, 0.15);
-  font-size: 55px;
-  letter-spacing: 10.4px;
-  line-height: 0;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: rgba(98, 110, 69, 0.15);
-  text-transform: uppercase;
-  padding-bottom: 0;
-}
+/* 內容 */
 body div.brand-news div.brand-news-allcontect {
   padding: 0 70px 0 0;
   width: 100%;
   height: 70%;
 }
+/* 新聞外框 */
 body div.brand-news div.brand-news-allcontect div.brand-news-contect {
   height: 100%;
   margin-top: 70px;
@@ -135,6 +142,7 @@ body div.brand-news div.brand-news-allcontect div.brand-news-contect {
   display: flex;
   overflow: hidden;
 }
+/* 所有新聞內容 */
 body
   div.brand-news
   div.brand-news-allcontect
@@ -142,8 +150,9 @@ body
   div.brand-news-txtbox {
   display: flex;
   justify-content: space-evenly;
-  width: 92%;
+  width: 88%;
 }
+/* 單篇新聞 */
 body
   div.brand-news
   div.brand-news-allcontect
@@ -154,6 +163,7 @@ body
   height: 100%;
   position: relative;
 }
+/* 知識文章標題 */
 body
   div.brand-news
   div.brand-news-allcontect
@@ -162,7 +172,7 @@ body
   div.item
   div.brand-news-contect-first-title {
   color: #626e45;
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 400;
   border-radius: 9999px;
   background-color: #f1efe8;
@@ -171,6 +181,7 @@ body
   margin-bottom: 25px;
   width: 27%;
 }
+/* 單篇新聞的標題 */
 body
   div.brand-news
   div.brand-news-allcontect
@@ -186,6 +197,7 @@ body
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+/* 單篇新聞內容 */
 body
   div.brand-news
   div.brand-news-allcontect
@@ -202,6 +214,7 @@ body
   font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
   overflow: hidden;
 }
+/* 單篇新聞照片 */
 body
   div.brand-news
   div.brand-news-allcontect
@@ -224,6 +237,21 @@ body
   position: relative;
   z-index: 2;
 }
+/* 圖片下的div背景，幫助item再hover時會有效過 */
+body
+  div.brand-news
+  div.brand-news-allcontect
+  div.brand-news-contect
+  div.brand-news-txtbox
+  div.item
+  div.image-background {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+  border-radius: 10% 10% 10% 10%;
+  transition: all 0.4s linear; /* 添加過渡效果 */
+}
 body
   div.brand-news
   div.brand-news-allcontect
@@ -231,25 +259,22 @@ body
   div.brand-news-txtbox
   div.item:hover
   div.image-background {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  z-index: 1;
   background-color: #7c8b57a1;
   transform: rotate(-5deg);
-  border-radius: 10% 10% 10% 10%;
   box-shadow: 4px 10px 20px 5px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.5s linear, box-shadow 0.5s linear,
+    transform 0.5s linear;
 }
-
+/* 按鈕及進度條的div */
 body div.brand-news div.brand-news-allcontect div.brand-news-contect div.a {
-  width: 9%;
+  width: 12%;
   background-color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
   z-index: 2;
 }
-
+/* 顯示當前項目和總項目數 */
 body
   div.brand-news
   div.brand-news-allcontect
@@ -262,7 +287,7 @@ body
   text-transform: uppercase;
   color: rgb(153, 153, 153);
 }
-
+/* 進度條 */
 body
   div.brand-news
   div.brand-news-allcontect
@@ -299,6 +324,7 @@ body
   border-radius: 20px;
   transition: height 0.5s ease-in-out, background-color 0.3s ease-in-out;
 }
+/* 上下一個新聞按鈕 */
 body
   div.brand-news
   div.brand-news-allcontect
@@ -312,7 +338,13 @@ body
   justify-content: space-evenly;
   align-items: center;
 }
-button.probtn,
+body
+  div.brand-news
+  div.brand-news-allcontect
+  div.brand-news-contect
+  div.a
+  div.pagebutton
+  button.probtn,
 button.nextbtn {
   width: 60px;
   height: 60px;
@@ -327,12 +359,18 @@ button.nextbtn {
   border: none;
   cursor: pointer;
 }
-
-button.probtn:hover,
+body
+  div.brand-news
+  div.brand-news-allcontect
+  div.brand-news-contect
+  div.a
+  div.pagebutton
+  button.probtn:hover,
 button.nextbtn:hover {
   background-color: #4a5d33;
 }
 
+/* 查看更多按鈕的效果 */
 @keyframes shadowSpreadContinuous {
   0% {
     box-shadow: 0 0 1px 0px #626e458f, 0 0 1px 0px #626e4526,
@@ -343,7 +381,7 @@ button.nextbtn:hover {
       0 0 1px 30px transparent;
   }
 }
-
+/* 狗狗腳印的效果 */
 @keyframes footanimation {
   0% {
     clip-path: inset(0 100% 0 0); /* 開始時圖片完全隱藏 */

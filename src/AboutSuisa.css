@@ -6,6 +6,7 @@ body div.about-SUISA div.databox {
   display: flex;
   padding: 0 30px 0 30px;
 }
+/* 中間的文字 */
 body div.about-SUISA div.databox div.databox-mid {
   display: flex;
   justify-content: center;
@@ -16,6 +17,7 @@ body div.about-SUISA div.databox div.databox-mid div.about-txt {
   flex-direction: column;
   align-items: center;
 }
+/* 標題兩個重疊 */
 body
   div.about-SUISA
   div.databox
@@ -61,6 +63,7 @@ body
   text-transform: uppercase;
   padding-bottom: 0;
 }
+/* 小標題&英文 */
 body
   div.about-SUISA
   div.databox
@@ -93,6 +96,7 @@ body
   padding: 12px 0 25px 0;
   text-align: center;
 }
+/* 內容 */
 body
   div.about-SUISA
   div.databox
@@ -117,6 +121,7 @@ body
   line-height: 1.8;
   text-align: center;
 }
+/* 看更多按鈕 */
 body div.about-SUISA div.databox div.databox-mid div.about-txt div.button {
   margin: 80px auto 0;
   display: flex;
@@ -157,6 +162,7 @@ body
   color: #ffffff;
   animation: shadowSpreadContinuous 0.9s linear infinite;
 }
+/* 左邊的圖片 */
 body div.about-SUISA div.databox div.databox-left {
   display: flex;
   justify-content: center;
@@ -167,6 +173,7 @@ body div.about-SUISA div.databox div.databox-left img {
   aspect-ratio: 1/1;
   width: 85%;
 }
+/* 右邊的圖片 */
 body div.about-SUISA div.databox div.databox-right {
   display: flex;
   justify-content: center;

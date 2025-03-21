@@ -9,7 +9,7 @@ const AboutSuisa = () => {
         <div class="databox">
           {/* 左邊的圖片 */}
           <div class="databox-left">
-            <img src="./image/about_img01__24A30EjyBs.jpg" alt="" />
+            <img src="./image/about_img01__24A30EjyBs.jpg" alt="左邊的圖片" />
           </div>
           {/* 中間的文字 */}
           <div class="databox-mid">
@@ -47,7 +47,7 @@ const AboutSuisa = () => {
           </div>
           {/* 右邊的圖片 */}
           <div class="databox-right">
-            <img src="./image/about_img02__24A30J0IrU.png" alt="" />
+            <img src="./image/about_img02__24A30J0IrU.png" alt="右邊的圖片" />
           </div>
         </div>
       </div>

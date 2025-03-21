@@ -1,12 +1,17 @@
 body div.share {
   padding: 30px 30px 45px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+/* 標題 */
 body div.share div.share-alltitle {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 0 0 55px 0;
 }
+/* 標題-SHARES */
 body div.share div.share-alltitle div.share-back-title {
   display: flex;
   align-items: center;
@@ -19,6 +24,7 @@ body div.share div.share-alltitle div.share-back-title {
   text-transform: uppercase;
   padding-bottom: 0;
 }
+/* 標題-心得分享 */
 body div.share div.share-alltitle div.share-fort-title {
   transform: translateY(-130%);
 }
@@ -33,35 +39,132 @@ body div.share div.share-alltitle div.share-fort-title h2 {
   font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
   letter-spacing: 4px;
 }
+/* 內容 */
 body div.share div.share-allcontect {
-  padding: 30px 30px 30px 30px;
+  margin: 30px 30px 30px 30px;
+  overflow: hidden;
   height: 98%;
+  width: 85%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
 }
+/* 所有心得內容 */
 body div.share div.share-allcontect div.share-contect {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
 }
+/* 心得 */
+body div.share div.share-allcontect div.share-contect div.OuterFrame {
+  background-color: #fff;
+  transition: all 0.4s linear;
+  border: 2px solid rgba(255, 255, 255, 0);
+}
+body div.share div.share-allcontect div.share-contect div.OuterFrame:hover {
+  background-color: #e7e5dc; /* 深色背景 */
+  background-size: 100% 100%; /* 背景大小擴展到完整的容器大小 */
+  background-position: center; /* 背景位置設定在中間 */
+  box-shadow: 0px 20px 15px 20px rgb(0, 0, 0, 0.15);
+  border: 2px solid white;
+  border-radius: 20px;
+  transition: background-size 0.7s linear, background-color 0.7s linear,
+    box-shadow 0.7s linear;
+}
+body div.share div.share-allcontect div.share-contect div.OuterFrame {
+  background-image: linear-gradient(
+    90deg,
+    transparent,
+    #f1efe8,
+    transparent
+  ); /* 深色的背景漸變 */
+  background-size: 100% 0%; /* 背景大小從 0 開始 */
+  background-position: center;
+  border: 2px solid rgba(255, 255, 255, 0);
+}
 body div.share div.share-allcontect div.share-contect div.item {
-  width: 25%;
+  width: 260px;
+  margin: 20px;
   display: flex;
   flex-direction: column;
   text-align: center;
   align-items: center;
 }
+/* 心得照片 */
 body div.share div.share-allcontect div.share-contect div.item div.icon img {
-  width: 85%;
   border-radius: 9999px;
   position: relative;
   z-index: 2;
 }
+body div.share div.share-allcontect div.share-contect div.item div.icon {
+  width: 240px;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* 心得照片後的背景要在hover時移動 */
+body
+  div.share
+  div.share-allcontect
+  div.share-contect
+  div.item
+  div.icon
+  div.iconback {
+  position: absolute;
+  border-radius: 9999px;
+  width: 250px;
+  height: 50%;
+  border: 1px solid rgb(207, 205, 205);
+  transition: all 0.5s linear;
+}
+body
+  div.share
+  div.share-allcontect
+  div.share-contect
+  div.OuterFrame.active
+  div.item
+  div.icon
+  div.iconback {
+  border: none; /* 移除邊框 */
+  background-color: #626e45; /* 背景顏色變為綠色 */
+  width: 230px; /* 與 icon 一樣寬 */
+  height: 50%; /* 高度與 icon 相同 */
+  transform: rotate(-20deg); /* 稍微傾斜 */
+  transition: background-color 0.5s linear, transform 0.5s linear;
+}
+body
+  div.share
+  div.share-allcontect
+  div.share-contect
+  div.OuterFrame:hover
+  div.item
+  div.icon
+  div.iconback {
+  border: none; /* 移除邊框 */
+  background-color: #626e45; /* 背景顏色變為綠色 */
+  width: 230px; /* 與 icon 一樣寬 */
+  height: 50%; /* 高度與 icon 相同 */
+  transform: rotate(-20deg); /* 稍微傾斜 */
+  transition: background-color 0.5s linear, transform 0.5s linear;
+}
+/* 在特定OuterFrame後+active 使CSS效過不同(讓特定心得為hover狀態) */
+body div.share div.share-allcontect div.share-contect div.OuterFrame.active {
+  background-color: #e7e5dc;
+  background-size: 100% 100%;
+  background-position: center;
+  box-shadow: 0px 20px 15px 20px rgb(0, 0, 0, 0.15);
+  border: 2px solid white;
+  border-radius: 20px;
+  transition: background-size 0.7s linear, background-color 0.7s linear,
+    box-shadow 0.7s linear;
+}
+
 body div.share div.share-allcontect div.share-contect div.item div.txtbox {
   padding: 40px 0 0 0;
-  width: 85%;
+  width: 260px;
 }
+/* 心得標題 */
 body
   div.share
   div.share-allcontect
@@ -75,6 +178,7 @@ body
   font-weight: 500;
   letter-spacing: 2.6px;
 }
+/* 心得內容 */
 body
   div.share
   div.share-allcontect
@@ -90,37 +194,55 @@ body
   height: 136px;
   overflow: hidden;
 }
+/* 按鈕 */
+body div.share div.share-allcontect button.probtn,
+button.nextbtn {
+  width: 60px;
+  height: 60px;
+  font-size: 32px;
+  background: #626e45;
+  color: white;
+  text-align: center;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+}
+body div.share div.share-allcontect button.probtn:hover,
+button.nextbtn:hover {
+  background-color: #4a5d33;
+}
+body div.share div.share-allcontect button.probtn {
+  position: relative;
+  z-index: 3;
+  top: 445px;
+  left: 345px;
+}
+body div.share div.share-allcontect button.nextbtn {
+  position: relative;
+  z-index: 3;
+  top: 385px;
+  left: 645px;
+}
+/* 點點連結 */
 body div.share div.a {
   width: 100%;
   height: 50px;
-  background-color: #f08a8a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-@keyframes shadowSpreadContinuous {
-  0% {
-    box-shadow: 0 0 1px 0px #626e458f, 0 0 1px 0px #626e4526,
-      0 0 1px 0px #626e4512;
-  }
-  100% {
-    box-shadow: 0 0 1px 10px transparent, 0 0 1px 20px transparent,
-      0 0 1px 30px transparent;
-  }
+body div.share div.a span.dot {
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  background-color: #ccc;
+  border-radius: 50%;
+  cursor: pointer;
 }
 
-@keyframes footanimation {
-  0% {
-    clip-path: inset(0 100% 0 0); /* 開始時圖片完全隱藏 */
-    opacity: 0; /* 開始時透明 */
-  }
-  33% {
-    clip-path: inset(0 0 0 0); /* 33% 時，圖片完全顯示 */
-    opacity: 1; /* 圖片完全顯示 */
-  }
-  66% {
-    clip-path: inset(0 0 0 0); /* 66% 時，圖片保持顯示 */
-    opacity: 1; /* 圖片保持顯示 */
-  }
-  100% {
-    clip-path: inset(0 0 0 0); /* 100% 時，圖片保持顯示 */
-    opacity: 0; /* 圖片慢慢變透明 */
-  }
+body div.share div.a span.dot.active {
+  background-color: #333;
 }

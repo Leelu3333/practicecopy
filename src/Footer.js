@@ -6,6 +6,7 @@ const Footer = () => {
     <footer>
       <div id="footer-area" class="footer-area">
         <div class="footer-img"></div>
+        {/* 上方資料 */}
         <div class="data-top">
           {/* logo */}
           <div class="footer-menu">
@@ -60,8 +61,10 @@ const Footer = () => {
             </nav>
           </div>
         </div>
+        {/* 中間資料 */}
         <div class="data-mid">
           <div class="mid-area">
+            {/* 中間資料-左 */}
             <div class="leftbox">
               <ul>
                 <li>
@@ -87,13 +90,16 @@ const Footer = () => {
                 </li>
               </ul>
             </div>
+            {/* 中間資料-右 */}
             <div class="rightbox">
               <div class="rightbox-title">銷售通路</div>
               <div class="databox"></div>
             </div>
           </div>
         </div>
+        {/* 下方資料 */}
         <div class="data-bottom">
+          {/* 下方資料-左 */}
           <div class="leftbox">
             <p>
               <span>© Copyright </span>
@@ -111,6 +117,7 @@ const Footer = () => {
               </a>
             </div>
           </div>
+          {/* 下方資料-右 */}
           <div class="rightbox">
             <div class="vtBox">
               <span class="title">公司統編</span>

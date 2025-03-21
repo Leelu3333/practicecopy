@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./SericesProduct.css";
 
+// 產品資料
 const productData = [
   {
     img: "./image/twL_catalog_m_24B05_tk4Z5oZPLL.jpg",
@@ -38,7 +39,7 @@ const SericesProduct = () => {
   const intervalRef = useRef(null); // 用來存儲 intervalID
 
   useEffect(() => {
-    // 複製並插入第一個和最後一個顏色塊
+    // 新陣列因為必須符合自動輪播視覺
     const clonedSlides = [
       productData[productData.length - 2], // 複製倒數第二個
       productData[productData.length - 1], // 複製最後一個
@@ -51,7 +52,7 @@ const SericesProduct = () => {
 
     setSlides(clonedSlides);
 
-    // 自動輪播邏輯
+    // 自動輪播
     intervalRef.current = setInterval(() => {
       goToNext();
     }, 5000); // 每 5 秒自動切換
@@ -61,6 +62,7 @@ const SericesProduct = () => {
     };
   }, []);
 
+  // 輪播移動的距離
   const getTransformStyle = () => {
     return {
       transition: isTransitioning ? "transform 0.5s ease" : "none", // 根據 isTransitioning 控制動畫開關
@@ -68,70 +70,81 @@ const SericesProduct = () => {
     };
   };
 
+  // 上個按鈕
   const goToPrevious = () => {
     if (currentIndex <= 1.8) {
-      // 1. 先正常動畫到 0
-      setIsTransitioning(true);
-      setCurrentIndex(0.8); // 讓動畫走到 0
+      // 初始為1.8，按一下會回傳1.8並為新值0.8
+      // 故回傳值為1.8等於要至陣列第0項
+      setIsTransitioning(true); // 開啟動畫
+      setCurrentIndex(0.8); // 讓動畫走到 0 = 0.8
 
-      // 2. 停止動畫，並跳轉到倒數第二個色塊
       setTimeout(() => {
-        setIsTransitioning(false); // 關閉過渡效果
-        setCurrentIndex(slides.length - 6 + 0.8); // 跳到倒數第 2 個
+        setIsTransitioning(false); // 關閉動畫過渡
+        // 因要無限輪播故關閉動畫直接跳至陣列後對應位置
+        setCurrentIndex(slides.length - 6 + 0.8); // 跳到新陣列所複製的第1個
       }, 500); // 停止動畫的時間長度，與動畫過渡時間相等
 
-      // 3. 延遲後重新開啟過渡
+      // 延遲後重新開啟過渡
       setTimeout(() => {
         setIsTransitioning(true); // 開啟動畫過渡
-      }, 600); // 重新開啟動畫的延遲時間（稍微長於 500ms 來確保狀態更新）
+      }, 600); // 重新開啟動畫的延遲時間（稍微長於 600ms 來確保狀態更新）
     } else {
-      // 如果不是在 1，直接上一頁
+      // 如果不是在 1.8，直接-1至對應位置
       setCurrentIndex((prevIndex) => prevIndex - 1);
     }
-    // 停止自動播放並重新計時
+    // 滑鼠滑到會停止自動播放
     clearInterval(intervalRef.current);
+    // 離開會重新計時並自動播放
     intervalRef.current = setInterval(() => {
       goToNext();
     }, 5000); // 每 5 秒自動切換
   };
 
+  // 下個按鈕
   const goToNext = () => {
     setCurrentIndex((prevIndex) => {
       if (prevIndex == 6.8) {
-        setIsTransitioning(true);
-        setCurrentIndex(7.8); // 讓動畫走到 0
+        // 到了新陣列複製的第一項要回1.7
+        setIsTransitioning(true); // 開啟動畫
+        setCurrentIndex(7.8); // 讓動畫走到 7.8
 
         setTimeout(() => {
           setIsTransitioning(false); // 關閉過渡效果
-          setCurrentIndex(1.8); // 跳到倒數第 2 個
+          setCurrentIndex(1.8); // 跳回第 1 個
         }, 500); // 停止動畫的時間長度，與動畫過渡時間相等
 
-        // 3. 延遲後重新開啟過渡
+        // 延遲後重新開啟過渡
         setTimeout(() => {
           setIsTransitioning(true); // 開啟動畫過渡
-        }, 600); // 重新開啟動畫的延遲時間（稍微長於 500ms 來確保狀態更新）
+        }, 600); // 重新開啟動畫的延遲時間（稍微長於 600ms 來確保狀態更新）
       } else {
+        // 如果不是在 6.7，直接+1至對應位置
         return prevIndex + 1;
       }
     });
-    // 停止自動播放並重新計時
+    // 滑鼠滑到會停止自動播放
     clearInterval(intervalRef.current);
+    // 離開會重新計時並自動播放
     intervalRef.current = setInterval(() => {
       goToNext();
     }, 5000); // 每 5 秒自動切換
   };
 
+  // 進度條數字 為符合就陣列有的資料數
   const calculateProgress = () => {
     if (currentIndex === 0.8) return 6; // 當 currentIndex 為 0 時顯示 6
     if (currentIndex === 7.8) return 1; // 當 currentIndex 為 7 時顯示 1
+    // 計算進度條的值，從2開始有變化所以要-1.8
     return ((currentIndex - 1.8) / (slides.length / 2 - 1)) * 6; // 計算進度條的值，從 6 減少到 1
   };
 
   const handleMouseEnter = () => {
-    clearInterval(intervalRef.current); // 停止自動輪播
+    // 滑鼠到就停止自動輪播
+    clearInterval(intervalRef.current);
   };
 
   const handleMouseLeave = () => {
+    // 滑鼠離開就重新開始自動輪播
     intervalRef.current = setInterval(() => {
       goToNext();
     }, 5000); // 重新開始自動輪播
@@ -147,24 +160,29 @@ const SericesProduct = () => {
             <div className="serices-product-back-title">PRODUCT</div>
             <div className="serices-product-fort-title">
               <h2>系列產品</h2>
+              {/* 狗狗腳印與虛線 */}
               <div className="footline">
                 <div className="line"></div>
                 <div className="foot"></div>
               </div>
             </div>
           </div>
+          {/* 看更多按鈕 */}
           <div className="button">
             <button className="viewmore-button">View More</button>
           </div>
         </div>
         {/* 內容 */}
         <div className="serices-product-allcontect" ref={carouselWrapperRef}>
+          {/*  所有產品內容 */}
           <div
             className="serices-product-contect"
             style={getTransformStyle()}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
           >
+            {/* 遍歷陣列每一項 */}
+            {/* 單篇產品 */}
             {slides.map((product, index) => (
               <div
                 key={index}
@@ -175,6 +193,7 @@ const SericesProduct = () => {
                 }}
               >
                 <div className="item-background"></div>
+                {/* 單篇產品圖片 */}
                 <div
                   className="icon"
                   style={{
@@ -183,20 +202,24 @@ const SericesProduct = () => {
                 >
                   <img src={product.img} alt={product.txt} />
                 </div>
+                {/* 單篇產品內容 */}
                 <div
                   className="txt"
                   style={{
                     width: `${slideWidth}px`, // 設置動態計算的寬度
                   }}
                 >
+                  {/* 單篇產品連結 */}
                   <div className="txt-link">
                     <a href="#">{">"}</a>
                   </div>
+                  {/* 單篇產品文字 */}
                   <p>{product.txt}</p>
                 </div>
               </div>
             ))}
           </div>
+          {/* 按鈕及進度條的div */}
           <div className="aaa">
             {/* 顯示當前項目和總項目數 */}
             <div className="page-number">

@@ -4,12 +4,14 @@ body div.main-area {
   flex-direction: column;
   justify-content: flex-start;
 }
+/* 首頁文字 */
 body div.main-area div.txt {
   width: 50%;
   position: relative;
   z-index: 1;
   padding: 140px 20px 85px;
 }
+/* 標題 */
 body div.main-area div.txt div.first-title p {
   display: block;
   color: #626e45;
@@ -27,6 +29,7 @@ body div.main-area div.txt div.sec-title h1 {
   letter-spacing: 6px;
   margin-top: 10px;
 }
+/* 內容 */
 body div.main-area div.txt div.content p {
   width: 90%;
   display: block;
@@ -37,6 +40,7 @@ body div.main-area div.txt div.content p {
   font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
   letter-spacing: 2.08px;
 }
+/* 看更多按鈕 */
 body div.main-area div.txt button.viewmore-button {
   width: 35%;
   height: 15%;
@@ -59,7 +63,7 @@ body div.main-area div.txt button.viewmore-button:hover {
   color: #ffffff;
   animation: shadowSpreadContinuous 0.9s linear infinite;
 }
-
+/* 首頁介紹背景照片 */
 body div.banner img {
   position: absolute;
   z-index: -1;

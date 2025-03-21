@@ -1,14 +1,17 @@
+/* 背景 */
 body div.serices-product {
   background-image: url(../public/image/pro_bg.png);
   padding: 100px 0 0 0;
   height: 962px;
   background-repeat: no-repeat;
 }
+/* 標題(含前後字) */
 body div.serices-product div.serices-product-title {
   padding: 50px 50px 0 50px;
   display: flex;
   justify-content: space-between;
 }
+/* 標題-系列產品 */
 body
   div.serices-product
   div.serices-product-title
@@ -32,6 +35,7 @@ body
   font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
   letter-spacing: 4px;
 }
+/* 狗狗腳印與虛線 */
 body
   div.serices-product
   div.serices-product-title
@@ -41,6 +45,7 @@ body
   transform: translateY(-50%);
   position: relative;
 }
+/* 虛線 */
 body
   div.serices-product
   div.serices-product-title
@@ -55,6 +60,7 @@ body
   background-size: contain;
   background-position: center;
 }
+/* 腳印 */
 body
   div.serices-product
   div.serices-product-title
@@ -76,12 +82,21 @@ body
   animation: footanimation 10s infinite forwards;
 }
 
+/* 標題-PRODUCT */
 body
   div.serices-product
   div.serices-product-title
   div.serices-product-tit
   div.serices-product-back-title {
   width: 80%;
+  color: rgba(176, 180, 157, 0.15);
+  font-size: 55px;
+  letter-spacing: 10.4px;
+  line-height: 0;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: rgba(98, 110, 69, 0.15);
+  text-transform: uppercase;
+  padding-bottom: 0;
 }
 body div.serices-product div.serices-product-title div.button {
   display: flex;
@@ -89,6 +104,7 @@ body div.serices-product div.serices-product-title div.button {
   align-items: flex-end;
   width: 15%;
 }
+/* 看更多按鈕 */
 body
   div.serices-product
   div.serices-product-title
@@ -116,19 +132,7 @@ body
   color: #ffffff;
   animation: shadowSpreadContinuous 0.9s linear infinite;
 }
-body
-  div.serices-product
-  div.serices-product-title
-  div.serices-product-back-title {
-  color: rgba(176, 180, 157, 0.15);
-  font-size: 55px;
-  letter-spacing: 10.4px;
-  line-height: 0;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: rgba(98, 110, 69, 0.15);
-  text-transform: uppercase;
-  padding-bottom: 0;
-}
+/* 內容 */
 body div.serices-product div.serices-product-allcontect {
   padding: 30px 30px 30px 30px;
   height: 86%;
@@ -138,6 +142,8 @@ body div.serices-product div.serices-product-allcontect {
   justify-content: space-evenly;
   overflow: hidden;
 }
+
+/*  所有產品內容 */
 body
   div.serices-product
   div.serices-product-allcontect
@@ -145,6 +151,7 @@ body
   width: 355%;
   display: flex;
 }
+/* 單篇產品 */
 body
   div.serices-product
   div.serices-product-allcontect
@@ -154,6 +161,7 @@ body
   border-radius: 10% 10% 10% 10%;
   transition: transform 0.5s ease, background-color 0.5s ease;
 }
+/* 單篇產品下的div背景，幫助item再hover時會有效過  */
 body
   div.serices-product
   div.serices-product-allcontect
@@ -167,6 +175,7 @@ body
   z-index: -2;
   transition: transform 0.5s ease, background-color 0.5s ease;
 }
+/* 單篇產品文字 */
 body
   div.serices-product
   div.serices-product-allcontect
@@ -182,6 +191,7 @@ body
   overflow: hidden;
   transition: background-color 0.5s ease;
 }
+/* 單篇產品連結在hover時會浮上 */
 body
   div.serices-product
   div.serices-product-allcontect
@@ -254,6 +264,7 @@ body
   z-index: 2;
   transition: background-color 0.5s ease, color 0.5s ease;
 }
+/* 單篇產品圖片hover時背景跑出 */
 body
   div.serices-product
   div.serices-product-allcontect
@@ -292,13 +303,14 @@ body
   background-color: #626e45;
   color: #ffffff;
 }
-
+/* 按鈕及進度條的div */
 body div.serices-product div.serices-product-allcontect div.aaa {
   width: 100%;
   padding: 0 30px 0 30px;
   display: flex;
   align-items: center;
 }
+/* 顯示當前項目和總項目數 */
 body
   div.serices-product
   div.serices-product-allcontect
@@ -306,10 +318,11 @@ body
   div.page-number {
   width: 10%;
   margin: 10px;
+  font-size: 25px;
   text-transform: uppercase;
   color: rgb(153, 153, 153);
 }
-
+/* 進度條 */
 body div.serices-product div.serices-product-allcontect div.aaa progress {
   height: 8px;
   border-radius: 20px;
@@ -337,33 +350,44 @@ body
   border-radius: 20px;
   transition: width 0.5s ease-in-out, background-color 0.3s ease-in-out;
 }
+/* 按鈕 */
 body div.serices-product div.serices-product-allcontect div.aaa div.pagebutton {
   width: 20%;
   display: flex;
   justify-content: space-evenly;
   margin: 10px;
 }
-button.probtn,
+
+body
+  div.serices-product
+  div.serices-product-allcontect
+  div.aaa
+  div.pagebutton
+  button.probtn,
 button.nextbtn {
-  width: 60px; /* 设置按钮的宽度 */
-  height: 60px; /* 设置按钮的高度，保持宽高相等 */
-  font-size: 32px; /* 调整字体大小，以适应按钮的尺寸 */
+  width: 60px;
+  height: 60px;
+  font-size: 32px;
   background: #626e45;
   color: white;
   text-align: center;
-  border-radius: 50%; /* 使按钮变成圆形 */
+  border-radius: 50%;
   display: flex;
   justify-content: center;
-  align-items: center; /* 确保文字居中 */
-  border: none; /* 移除默认按钮边框 */
-  cursor: pointer; /* 鼠标悬停时显示为点击状态 */
+  align-items: center;
+  border: none;
+  cursor: pointer;
 }
-
-button.probtn:hover,
+body
+  div.serices-product
+  div.serices-product-allcontect
+  div.aaa
+  div.pagebutton
+  button.probtn:hover,
 button.nextbtn:hover {
-  background-color: #4a5d33; /* 鼠标悬停时的颜色变化 */
+  background-color: #4a5d33;
 }
-
+/* 查看更多按鈕的效果 */
 @keyframes shadowSpreadContinuous {
   0% {
     box-shadow: 0 0 1px 0px #626e458f, 0 0 1px 0px #626e4526,
@@ -374,7 +398,7 @@ button.nextbtn:hover {
       0 0 1px 30px transparent;
   }
 }
-
+/* 狗狗腳印的效果 */
 @keyframes footanimation {
   0% {
     clip-path: inset(0 100% 0 0); /* 開始時圖片完全隱藏 */

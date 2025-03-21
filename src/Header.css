@@ -1,4 +1,4 @@
-header {
+body header {
   background-color: #ffffff;
   border-radius: 9999px;
   position: fixed;
@@ -13,11 +13,11 @@ header {
   align-items: center;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1098039216);
 }
+/* logo */
 body header div.logo {
   width: 22%;
   height: 100%;
   display: flex;
-  /* padding: 0 10px 0 10px; */
   align-items: center;
 }
 body header div.logo a {
@@ -26,9 +26,7 @@ body header div.logo a {
 body header div.logo a img {
   width: 85%;
 }
-/* body header nav {
-  width: 60%;
-} */
+/* 導覽列 */
 body header nav ul {
   display: flex;
   padding: 0 30px 0 30px;
@@ -58,6 +56,7 @@ body header nav ul li a span.b {
   letter-spacing: 1.3px;
   margin-top: 5px;
 }
+/* 導覽列中語言及銷售通路 */
 body header div.languageandsales {
   display: flex;
   justify-content: space-between;
@@ -67,6 +66,7 @@ body header div.languageandsales {
 body header div.languageandsales div.language {
   width: 48%;
 }
+/* 語言設定 */
 body header div.languageandsales div.language-title {
   text-align: center;
   display: flex;
@@ -80,13 +80,11 @@ body header div.languageandsales div.language-title {
   color: #626e45;
   background-color: #ffffff;
 }
-
 body header div.languageandsales div.language-title:hover {
   background-color: #626e45;
   color: #ffffff;
   animation: shadowSpreadContinuous 0.9s linear infinite;
 }
-
 @keyframes shadowSpreadContinuous {
   0% {
     box-shadow: 0 0 1px 0px #626e458f, 0 0 1px 0px #626e4526,
@@ -107,7 +105,7 @@ body header div.languageandsales div.language div.language-content {
 #state:checked ~ .language-content {
   max-height: 200px;
 }
-
+/* 繁體、英文 */
 body
   header
   div.languageandsales
@@ -159,7 +157,7 @@ body
   color: #ffffff;
   background-color: #626e45;
 }
-
+/* 銷貨通路 */
 body header div.languageandsales a.sales {
   display: flex;
   align-items: center;
