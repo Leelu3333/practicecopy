@@ -1,419 +1,3496 @@
-/* 背景 */
-body div.serices-product {
-  background-image: url(../public/image/pro_bg.png);
-  padding: 100px 0 0 0;
-  height: 962px;
-  background-repeat: no-repeat;
-}
-/* 標題(含前後字) */
-body div.serices-product div.serices-product-title {
-  padding: 50px 50px 0 50px;
-  display: flex;
-  justify-content: space-between;
-}
-/* 標題-系列產品 */
-body
-  div.serices-product
-  div.serices-product-title
-  div.serices-product-tit
-  div.serices-product-fort-title {
-  width: 80%;
-  display: flex;
-}
-body
-  div.serices-product
-  div.serices-product-title
-  div.serices-product-tit
-  div.serices-product-fort-title
-  h2 {
-  transform: translateY(-50%);
-  width: 25%;
-  margin: 0 auto;
-  color: #363636;
-  font-size: 30px;
-  font-weight: 600;
-  font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
-  letter-spacing: 4px;
-}
-/* 狗狗腳印與虛線 */
-body
-  div.serices-product
-  div.serices-product-title
-  div.serices-product-tit
-  div.serices-product-fort-title
-  div.footline {
-  transform: translateY(-50%);
-  position: relative;
-}
-/* 虛線 */
-body
-  div.serices-product
-  div.serices-product-title
-  div.serices-product-tit
-  div.serices-product-fort-title
-  div.footline
-  div.line {
-  background-image: url(../public/image/title_line.png);
-  width: 100%;
-  height: 150%;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-}
-/* 腳印 */
-body
-  div.serices-product
-  div.serices-product-title
-  div.serices-product-tit
-  div.serices-product-fort-title
-  div.footline
-  div.foot {
-  transform: translateY(-100%);
-  background-image: url(../public/image/foot.png);
-  width: 100%;
-  height: 150%;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-  overflow: hidden;
-  position: absolute;
-  clip-path: inset(0 100% 0 0);
-  opacity: 0;
-  animation: footanimation 10s infinite forwards;
-}
-
-/* 標題-PRODUCT */
-body
-  div.serices-product
-  div.serices-product-title
-  div.serices-product-tit
-  div.serices-product-back-title {
-  width: 80%;
-  color: rgba(176, 180, 157, 0.15);
-  font-size: 55px;
-  letter-spacing: 10.4px;
-  line-height: 0;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: rgba(98, 110, 69, 0.15);
-  text-transform: uppercase;
-  padding-bottom: 0;
-}
-body div.serices-product div.serices-product-title div.button {
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  width: 15%;
-}
-/* 看更多按鈕 */
-body
-  div.serices-product
-  div.serices-product-title
-  div.button
-  button.viewmore-button {
-  width: 100%;
-  height: 150%;
-  font-size: 20px;
-  font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
-  background-color: #ffffff00;
-  border: 2px solid #626e45;
-  border-style: dashed;
-  border-width: 1px;
-  border-radius: 9999px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-body
-  div.serices-product
-  div.serices-product-title
-  div.button
-  button.viewmore-button:hover {
-  background-color: #626e45;
-  color: #ffffff;
-  animation: shadowSpreadContinuous 0.9s linear infinite;
-}
-/* 內容 */
-body div.serices-product div.serices-product-allcontect {
-  padding: 30px 30px 30px 30px;
-  height: 86%;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  overflow: hidden;
-}
-
-/*  所有產品內容 */
-body
-  div.serices-product
-  div.serices-product-allcontect
-  div.serices-product-contect {
-  width: 355%;
-  display: flex;
-}
-/* 單篇產品 */
-body
-  div.serices-product
-  div.serices-product-allcontect
-  div.serices-product-contect
-  div.item {
-  position: relative;
-  border-radius: 10% 10% 10% 10%;
-  transition: transform 0.5s ease, background-color 0.5s ease;
-}
-/* 單篇產品下的div背景，幫助item再hover時會有效過  */
-body
-  div.serices-product
-  div.serices-product-allcontect
-  div.serices-product-contect
-  div.item
-  div.item-background {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  border-radius: 10% 10% 10% 10%;
-  z-index: -2;
-  transition: transform 0.5s ease, background-color 0.5s ease;
-}
-/* 單篇產品文字 */
-body
-  div.serices-product
-  div.serices-product-allcontect
-  div.serices-product-contect
-  div.item
-  div.txt {
-  display: flex;
-  position: absolute;
-  transform: translateY(-100%);
-  height: 100%;
-  align-items: flex-end;
-  border-radius: 10% 10% 10% 10%;
-  overflow: hidden;
-  transition: background-color 0.5s ease;
-}
-/* 單篇產品連結在hover時會浮上 */
-body
-  div.serices-product
-  div.serices-product-allcontect
-  div.serices-product-contect
-  div.item
-  .txt
-  .txt-link {
-  display: flex;
-  position: absolute;
-  z-index: 1;
-  height: 100%;
-  align-items: center;
-  justify-content: center;
-  transform: translateY(100%);
-  transition: transform 0.5s ease, opacity 0.5s ease;
-  opacity: 0;
-}
-body
-  div.serices-product
-  div.serices-product-allcontect
-  div.serices-product-contect
-  div.item:hover
-  .txt
-  .txt-link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  z-index: 1;
-  height: 100%;
-  transform: translateY(0);
-  opacity: 1;
-}
-
-body
-  div.serices-product
-  div.serices-product-allcontect
-  div.serices-product-contect
-  div.item
-  div.txt
-  div.txt-link
-  a {
-  text-decoration: none;
-  background-color: white;
-  width: 20%;
-  height: 20%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 100%;
-}
-body
-  div.serices-product
-  div.serices-product-allcontect
-  div.serices-product-contect
-  div.item
-  div.txt
-  p {
-  display: flex;
-  text-align: center;
-  font-size: 20px;
-  border-radius: 50% 50% 0 0;
-  height: 30%;
-  background-color: #ffffffb3;
-  justify-content: center;
-  align-items: center;
-  font-weight: 500;
-  letter-spacing: 5.5px;
-  position: relative;
-  z-index: 2;
-  transition: background-color 0.5s ease, color 0.5s ease;
-}
-/* 單篇產品圖片hover時背景跑出 */
-body
-  div.serices-product
-  div.serices-product-allcontect
-  div.serices-product-contect
-  div.item
-  div.icon {
-  border-radius: 10% 10% 10% 10%;
-  overflow: hidden;
-}
-body
-  div.serices-product
-  div.serices-product-allcontect
-  div.serices-product-contect
-  div.item:hover
-  div.item-background {
-  background-color: #7c8b5780;
-  transform: rotate(-15deg);
-  box-shadow: 4px 10px 20px 5px rgba(0, 0, 0, 0.2);
-}
-
-body
-  div.serices-product
-  div.serices-product-allcontect
-  div.serices-product-contect
-  div.item:hover
-  div.txt {
-  background-color: #7a806992;
-}
-body
-  div.serices-product
-  div.serices-product-allcontect
-  div.serices-product-contect
-  div.item:hover
-  div.txt
-  p {
-  background-color: #626e45;
-  color: #ffffff;
-}
-/* 按鈕及進度條的div */
-body div.serices-product div.serices-product-allcontect div.aaa {
-  width: 100%;
-  padding: 0 30px 0 30px;
-  display: flex;
-  align-items: center;
-}
-/* 顯示當前項目和總項目數 */
-body
-  div.serices-product
-  div.serices-product-allcontect
-  div.aaa
-  div.page-number {
-  width: 10%;
-  margin: 10px;
-  font-size: 25px;
-  text-transform: uppercase;
-  color: rgb(153, 153, 153);
-}
-/* 進度條 */
-body div.serices-product div.serices-product-allcontect div.aaa progress {
-  height: 8px;
-  border-radius: 20px;
-  background-color: #d4d5c7;
-  appearance: none;
-  width: 75%;
-}
-/* 設置進度條背景色 */
-body
-  div.serices-product
-  div.serices-product-allcontect
-  div.aaa
-  progress::-webkit-progress-bar {
-  background-color: #d4d5c7;
-  border-radius: 20px;
-}
-
-/* 設置進度條顏色 */
-body
-  div.serices-product
-  div.serices-product-allcontect
-  div.aaa
-  progress::-webkit-progress-value {
-  background-color: #626e45;
-  border-radius: 20px;
-  transition: width 0.5s ease-in-out, background-color 0.3s ease-in-out;
-}
-/* 按鈕 */
-body div.serices-product div.serices-product-allcontect div.aaa div.pagebutton {
-  width: 20%;
-  display: flex;
-  justify-content: space-evenly;
-  margin: 10px;
-}
-
-body
-  div.serices-product
-  div.serices-product-allcontect
-  div.aaa
-  div.pagebutton
-  button.probtn,
-button.nextbtn {
-  width: 60px;
-  height: 60px;
-  font-size: 32px;
-  background: #626e45;
-  color: white;
-  text-align: center;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: none;
-  cursor: pointer;
-}
-body
-  div.serices-product
-  div.serices-product-allcontect
-  div.aaa
-  div.pagebutton
-  button.probtn:hover,
-button.nextbtn:hover {
-  background-color: #4a5d33;
-}
-/* 查看更多按鈕的效果 */
-@keyframes shadowSpreadContinuous {
-  0% {
-    box-shadow: 0 0 1px 0px #626e458f, 0 0 1px 0px #626e4526,
-      0 0 1px 0px #626e4512;
+@media (min-width: 0px) {
+  /* 背景 */
+  body div.serices-product {
+    background-image: url(../public/image/pro_bg.png);
+    padding: 100px 0 0 0;
+    height: 962px;
+    background-repeat: no-repeat;
   }
-  100% {
-    box-shadow: 0 0 1px 10px transparent, 0 0 1px 20px transparent,
-      0 0 1px 30px transparent;
+  /* 標題(含前後字) */
+  body div.serices-product div.serices-product-title {
+    padding: 50px 50px 0 50px;
+    display: flex;
+    justify-content: space-between;
+  }
+  /* 標題-系列產品 */
+  body
+    div.serices-product
+    div.serices-product-title
+    div.serices-product-tit
+    div.serices-product-fort-title {
+    width: 80%;
+    display: flex;
+  }
+  body
+    div.serices-product
+    div.serices-product-title
+    div.serices-product-tit
+    div.serices-product-fort-title
+    h2 {
+    transform: translateY(-50%);
+    width: 25%;
+    margin: 0 auto;
+    color: #363636;
+    font-size: 30px;
+    font-weight: 600;
+    font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+    letter-spacing: 4px;
+  }
+  /* 狗狗腳印與虛線 */
+  body
+    div.serices-product
+    div.serices-product-title
+    div.serices-product-tit
+    div.serices-product-fort-title
+    div.footline {
+    transform: translateY(-50%);
+    position: relative;
+  }
+  /* 虛線 */
+  body
+    div.serices-product
+    div.serices-product-title
+    div.serices-product-tit
+    div.serices-product-fort-title
+    div.footline
+    div.line {
+    background-image: url(../public/image/title_line.png);
+    width: 100%;
+    height: 150%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+  /* 腳印 */
+  body
+    div.serices-product
+    div.serices-product-title
+    div.serices-product-tit
+    div.serices-product-fort-title
+    div.footline
+    div.foot {
+    transform: translateY(-100%);
+    background-image: url(../public/image/foot.png);
+    width: 100%;
+    height: 150%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    overflow: hidden;
+    position: absolute;
+    clip-path: inset(0 100% 0 0);
+    opacity: 0;
+    animation: footanimation 10s infinite forwards;
+  }
+
+  /* 標題-PRODUCT */
+  body
+    div.serices-product
+    div.serices-product-title
+    div.serices-product-tit
+    div.serices-product-back-title {
+    width: 80%;
+    color: rgba(176, 180, 157, 0.15);
+    font-size: 55px;
+    letter-spacing: 10.4px;
+    line-height: 0;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgba(98, 110, 69, 0.15);
+    text-transform: uppercase;
+    padding-bottom: 0;
+  }
+  body div.serices-product div.serices-product-title div.button {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 15%;
+  }
+  /* 看更多按鈕 */
+  body
+    div.serices-product
+    div.serices-product-title
+    div.button
+    button.viewmore-button {
+    width: 100%;
+    height: 150%;
+    font-size: 20px;
+    font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+    background-color: #ffffff00;
+    border: 2px solid #626e45;
+    border-style: dashed;
+    border-width: 1px;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  body
+    div.serices-product
+    div.serices-product-title
+    div.button
+    button.viewmore-button:hover {
+    background-color: #626e45;
+    color: #ffffff;
+    animation: shadowSpreadContinuous 0.9s linear infinite;
+  }
+  /* 內容 */
+  body div.serices-product div.serices-product-allcontect {
+    padding: 30px 30px 30px 30px;
+    height: 86%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    overflow: hidden;
+  }
+
+  /*  所有產品內容 */
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.serices-product-contect {
+    width: 355%;
+    display: flex;
+  }
+  /* 單篇產品 */
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.serices-product-contect
+    div.item {
+    position: relative;
+    border-radius: 10% 10% 10% 10%;
+    transition: transform 0.5s ease, background-color 0.5s ease;
+  }
+  /* 單篇產品下的div背景，幫助item再hover時會有效過  */
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.serices-product-contect
+    div.item
+    div.item-background {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 10% 10% 10% 10%;
+    z-index: -2;
+    transition: transform 0.5s ease, background-color 0.5s ease;
+  }
+  /* 單篇產品文字 */
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.serices-product-contect
+    div.item
+    div.txt {
+    display: flex;
+    position: absolute;
+    transform: translateY(-100%);
+    height: 100%;
+    align-items: flex-end;
+    border-radius: 10% 10% 10% 10%;
+    overflow: hidden;
+    transition: background-color 0.5s ease;
+  }
+  /* 單篇產品連結在hover時會浮上 */
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.serices-product-contect
+    div.item
+    .txt
+    .txt-link {
+    display: flex;
+    position: absolute;
+    z-index: 1;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(100%);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    opacity: 0;
+  }
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.serices-product-contect
+    div.item:hover
+    .txt
+    .txt-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 1;
+    height: 100%;
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.serices-product-contect
+    div.item
+    div.txt
+    div.txt-link
+    a {
+    text-decoration: none;
+    background-color: white;
+    width: 20%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+  }
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.serices-product-contect
+    div.item
+    div.txt
+    p {
+    display: flex;
+    text-align: center;
+    font-size: 20px;
+    border-radius: 50% 50% 0 0;
+    height: 30%;
+    background-color: #ffffffb3;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    letter-spacing: 5.5px;
+    position: relative;
+    z-index: 2;
+    transition: background-color 0.5s ease, color 0.5s ease;
+  }
+  /* 單篇產品圖片hover時背景跑出 */
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.serices-product-contect
+    div.item
+    div.icon {
+    border-radius: 10% 10% 10% 10%;
+    overflow: hidden;
+  }
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.serices-product-contect
+    div.item:hover
+    div.item-background {
+    background-color: #7c8b5780;
+    transform: rotate(-15deg);
+    box-shadow: 4px 10px 20px 5px rgba(0, 0, 0, 0.2);
+  }
+
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.serices-product-contect
+    div.item:hover
+    div.txt {
+    background-color: #7a806992;
+  }
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.serices-product-contect
+    div.item:hover
+    div.txt
+    p {
+    background-color: #626e45;
+    color: #ffffff;
+  }
+  /* 按鈕及進度條的div */
+  body div.serices-product div.serices-product-allcontect div.aaa {
+    width: 100%;
+    padding: 0 30px 0 30px;
+    display: flex;
+    align-items: center;
+  }
+  /* 顯示當前項目和總項目數 */
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.aaa
+    div.page-number {
+    width: 10%;
+    margin: 10px;
+    font-size: 25px;
+    text-transform: uppercase;
+    color: rgb(153, 153, 153);
+  }
+  /* 進度條 */
+  body div.serices-product div.serices-product-allcontect div.aaa progress {
+    height: 8px;
+    border-radius: 20px;
+    background-color: #d4d5c7;
+    appearance: none;
+    width: 75%;
+  }
+  /* 設置進度條背景色 */
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.aaa
+    progress::-webkit-progress-bar {
+    background-color: #d4d5c7;
+    border-radius: 20px;
+  }
+
+  /* 設置進度條顏色 */
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.aaa
+    progress::-webkit-progress-value {
+    background-color: #626e45;
+    border-radius: 20px;
+    transition: width 0.5s ease-in-out, background-color 0.3s ease-in-out;
+  }
+  /* 按鈕 */
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.aaa
+    div.pagebutton {
+    width: 20%;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 10px;
+  }
+
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.aaa
+    div.pagebutton
+    button.probtn,
+  button.nextbtn {
+    width: 60px;
+    height: 60px;
+    font-size: 32px;
+    background: #626e45;
+    color: white;
+    text-align: center;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+  }
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.aaa
+    div.pagebutton
+    button.probtn:hover,
+  button.nextbtn:hover {
+    background-color: #4a5d33;
+  }
+  /* 查看更多按鈕的效果 */
+  @keyframes shadowSpreadContinuous {
+    0% {
+      box-shadow: 0 0 1px 0px #626e458f, 0 0 1px 0px #626e4526,
+        0 0 1px 0px #626e4512;
+    }
+    100% {
+      box-shadow: 0 0 1px 10px transparent, 0 0 1px 20px transparent,
+        0 0 1px 30px transparent;
+    }
+  }
+  /* 狗狗腳印的效果 */
+  @keyframes footanimation {
+    0% {
+      clip-path: inset(0 100% 0 0); /* 開始時圖片完全隱藏 */
+      opacity: 0; /* 開始時透明 */
+    }
+    33% {
+      clip-path: inset(0 0 0 0); /* 33% 時，圖片完全顯示 */
+      opacity: 1; /* 圖片完全顯示 */
+    }
+    66% {
+      clip-path: inset(0 0 0 0); /* 66% 時，圖片保持顯示 */
+      opacity: 1; /* 圖片保持顯示 */
+    }
+    100% {
+      clip-path: inset(0 0 0 0); /* 100% 時，圖片保持顯示 */
+      opacity: 0; /* 圖片慢慢變透明 */
+    }
   }
 }
-/* 狗狗腳印的效果 */
-@keyframes footanimation {
-  0% {
-    clip-path: inset(0 100% 0 0); /* 開始時圖片完全隱藏 */
-    opacity: 0; /* 開始時透明 */
+@media (min-width: 576px) {
+  /* 背景 */
+  body div.serices-product {
+    background-image: url(../public/image/pro_bg.png);
+    padding: 100px 0 0 0;
+    height: 962px;
+    background-repeat: no-repeat;
   }
-  33% {
-    clip-path: inset(0 0 0 0); /* 33% 時，圖片完全顯示 */
-    opacity: 1; /* 圖片完全顯示 */
+  /* 標題(含前後字) */
+  body div.serices-product div.serices-product-title {
+    padding: 50px 50px 0 50px;
+    display: flex;
+    justify-content: space-between;
   }
-  66% {
-    clip-path: inset(0 0 0 0); /* 66% 時，圖片保持顯示 */
-    opacity: 1; /* 圖片保持顯示 */
+  /* 標題-系列產品 */
+  body
+    div.serices-product
+    div.serices-product-title
+    div.serices-product-tit
+    div.serices-product-fort-title {
+    width: 80%;
+    display: flex;
   }
-  100% {
-    clip-path: inset(0 0 0 0); /* 100% 時，圖片保持顯示 */
-    opacity: 0; /* 圖片慢慢變透明 */
+  body
+    div.serices-product
+    div.serices-product-title
+    div.serices-product-tit
+    div.serices-product-fort-title
+    h2 {
+    transform: translateY(-50%);
+    width: 25%;
+    margin: 0 auto;
+    color: #363636;
+    font-size: 30px;
+    font-weight: 600;
+    font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+    letter-spacing: 4px;
+  }
+  /* 狗狗腳印與虛線 */
+  body
+    div.serices-product
+    div.serices-product-title
+    div.serices-product-tit
+    div.serices-product-fort-title
+    div.footline {
+    transform: translateY(-50%);
+    position: relative;
+  }
+  /* 虛線 */
+  body
+    div.serices-product
+    div.serices-product-title
+    div.serices-product-tit
+    div.serices-product-fort-title
+    div.footline
+    div.line {
+    background-image: url(../public/image/title_line.png);
+    width: 100%;
+    height: 150%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+  /* 腳印 */
+  body
+    div.serices-product
+    div.serices-product-title
+    div.serices-product-tit
+    div.serices-product-fort-title
+    div.footline
+    div.foot {
+    transform: translateY(-100%);
+    background-image: url(../public/image/foot.png);
+    width: 100%;
+    height: 150%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    overflow: hidden;
+    position: absolute;
+    clip-path: inset(0 100% 0 0);
+    opacity: 0;
+    animation: footanimation 10s infinite forwards;
+  }
+
+  /* 標題-PRODUCT */
+  body
+    div.serices-product
+    div.serices-product-title
+    div.serices-product-tit
+    div.serices-product-back-title {
+    width: 80%;
+    color: rgba(176, 180, 157, 0.15);
+    font-size: 55px;
+    letter-spacing: 10.4px;
+    line-height: 0;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgba(98, 110, 69, 0.15);
+    text-transform: uppercase;
+    padding-bottom: 0;
+  }
+  body div.serices-product div.serices-product-title div.button {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 15%;
+  }
+  /* 看更多按鈕 */
+  body
+    div.serices-product
+    div.serices-product-title
+    div.button
+    button.viewmore-button {
+    width: 100%;
+    height: 150%;
+    font-size: 20px;
+    font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+    background-color: #ffffff00;
+    border: 2px solid #626e45;
+    border-style: dashed;
+    border-width: 1px;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  body
+    div.serices-product
+    div.serices-product-title
+    div.button
+    button.viewmore-button:hover {
+    background-color: #626e45;
+    color: #ffffff;
+    animation: shadowSpreadContinuous 0.9s linear infinite;
+  }
+  /* 內容 */
+  body div.serices-product div.serices-product-allcontect {
+    padding: 30px 30px 30px 30px;
+    height: 86%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    overflow: hidden;
+  }
+
+  /*  所有產品內容 */
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.serices-product-contect {
+    width: 355%;
+    display: flex;
+  }
+  /* 單篇產品 */
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.serices-product-contect
+    div.item {
+    position: relative;
+    border-radius: 10% 10% 10% 10%;
+    transition: transform 0.5s ease, background-color 0.5s ease;
+  }
+  /* 單篇產品下的div背景，幫助item再hover時會有效過  */
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.serices-product-contect
+    div.item
+    div.item-background {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 10% 10% 10% 10%;
+    z-index: -2;
+    transition: transform 0.5s ease, background-color 0.5s ease;
+  }
+  /* 單篇產品文字 */
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.serices-product-contect
+    div.item
+    div.txt {
+    display: flex;
+    position: absolute;
+    transform: translateY(-100%);
+    height: 100%;
+    align-items: flex-end;
+    border-radius: 10% 10% 10% 10%;
+    overflow: hidden;
+    transition: background-color 0.5s ease;
+  }
+  /* 單篇產品連結在hover時會浮上 */
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.serices-product-contect
+    div.item
+    .txt
+    .txt-link {
+    display: flex;
+    position: absolute;
+    z-index: 1;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(100%);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    opacity: 0;
+  }
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.serices-product-contect
+    div.item:hover
+    .txt
+    .txt-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 1;
+    height: 100%;
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.serices-product-contect
+    div.item
+    div.txt
+    div.txt-link
+    a {
+    text-decoration: none;
+    background-color: white;
+    width: 20%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+  }
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.serices-product-contect
+    div.item
+    div.txt
+    p {
+    display: flex;
+    text-align: center;
+    font-size: 20px;
+    border-radius: 50% 50% 0 0;
+    height: 30%;
+    background-color: #ffffffb3;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    letter-spacing: 5.5px;
+    position: relative;
+    z-index: 2;
+    transition: background-color 0.5s ease, color 0.5s ease;
+  }
+  /* 單篇產品圖片hover時背景跑出 */
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.serices-product-contect
+    div.item
+    div.icon {
+    border-radius: 10% 10% 10% 10%;
+    overflow: hidden;
+  }
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.serices-product-contect
+    div.item:hover
+    div.item-background {
+    background-color: #7c8b5780;
+    transform: rotate(-15deg);
+    box-shadow: 4px 10px 20px 5px rgba(0, 0, 0, 0.2);
+  }
+
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.serices-product-contect
+    div.item:hover
+    div.txt {
+    background-color: #7a806992;
+  }
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.serices-product-contect
+    div.item:hover
+    div.txt
+    p {
+    background-color: #626e45;
+    color: #ffffff;
+  }
+  /* 按鈕及進度條的div */
+  body div.serices-product div.serices-product-allcontect div.aaa {
+    width: 100%;
+    padding: 0 30px 0 30px;
+    display: flex;
+    align-items: center;
+  }
+  /* 顯示當前項目和總項目數 */
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.aaa
+    div.page-number {
+    width: 10%;
+    margin: 10px;
+    font-size: 25px;
+    text-transform: uppercase;
+    color: rgb(153, 153, 153);
+  }
+  /* 進度條 */
+  body div.serices-product div.serices-product-allcontect div.aaa progress {
+    height: 8px;
+    border-radius: 20px;
+    background-color: #d4d5c7;
+    appearance: none;
+    width: 75%;
+  }
+  /* 設置進度條背景色 */
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.aaa
+    progress::-webkit-progress-bar {
+    background-color: #d4d5c7;
+    border-radius: 20px;
+  }
+
+  /* 設置進度條顏色 */
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.aaa
+    progress::-webkit-progress-value {
+    background-color: #626e45;
+    border-radius: 20px;
+    transition: width 0.5s ease-in-out, background-color 0.3s ease-in-out;
+  }
+  /* 按鈕 */
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.aaa
+    div.pagebutton {
+    width: 20%;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 10px;
+  }
+
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.aaa
+    div.pagebutton
+    button.probtn,
+  button.nextbtn {
+    width: 60px;
+    height: 60px;
+    font-size: 32px;
+    background: #626e45;
+    color: white;
+    text-align: center;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+  }
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.aaa
+    div.pagebutton
+    button.probtn:hover,
+  button.nextbtn:hover {
+    background-color: #4a5d33;
+  }
+  /* 查看更多按鈕的效果 */
+  @keyframes shadowSpreadContinuous {
+    0% {
+      box-shadow: 0 0 1px 0px #626e458f, 0 0 1px 0px #626e4526,
+        0 0 1px 0px #626e4512;
+    }
+    100% {
+      box-shadow: 0 0 1px 10px transparent, 0 0 1px 20px transparent,
+        0 0 1px 30px transparent;
+    }
+  }
+  /* 狗狗腳印的效果 */
+  @keyframes footanimation {
+    0% {
+      clip-path: inset(0 100% 0 0); /* 開始時圖片完全隱藏 */
+      opacity: 0; /* 開始時透明 */
+    }
+    33% {
+      clip-path: inset(0 0 0 0); /* 33% 時，圖片完全顯示 */
+      opacity: 1; /* 圖片完全顯示 */
+    }
+    66% {
+      clip-path: inset(0 0 0 0); /* 66% 時，圖片保持顯示 */
+      opacity: 1; /* 圖片保持顯示 */
+    }
+    100% {
+      clip-path: inset(0 0 0 0); /* 100% 時，圖片保持顯示 */
+      opacity: 0; /* 圖片慢慢變透明 */
+    }
+  }
+}
+@media (min-width: 768px) {
+  /* 背景 */
+  body div.serices-product {
+    background-image: url(../public/image/pro_bg.png);
+    padding: 100px 0 0 0;
+    height: 962px;
+    background-repeat: no-repeat;
+  }
+  /* 標題(含前後字) */
+  body div.serices-product div.serices-product-title {
+    padding: 50px 50px 0 50px;
+    display: flex;
+    justify-content: space-between;
+  }
+  /* 標題-系列產品 */
+  body
+    div.serices-product
+    div.serices-product-title
+    div.serices-product-tit
+    div.serices-product-fort-title {
+    width: 80%;
+    display: flex;
+  }
+  body
+    div.serices-product
+    div.serices-product-title
+    div.serices-product-tit
+    div.serices-product-fort-title
+    h2 {
+    transform: translateY(-50%);
+    width: 25%;
+    margin: 0 auto;
+    color: #363636;
+    font-size: 30px;
+    font-weight: 600;
+    font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+    letter-spacing: 4px;
+  }
+  /* 狗狗腳印與虛線 */
+  body
+    div.serices-product
+    div.serices-product-title
+    div.serices-product-tit
+    div.serices-product-fort-title
+    div.footline {
+    transform: translateY(-50%);
+    position: relative;
+  }
+  /* 虛線 */
+  body
+    div.serices-product
+    div.serices-product-title
+    div.serices-product-tit
+    div.serices-product-fort-title
+    div.footline
+    div.line {
+    background-image: url(../public/image/title_line.png);
+    width: 100%;
+    height: 150%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+  /* 腳印 */
+  body
+    div.serices-product
+    div.serices-product-title
+    div.serices-product-tit
+    div.serices-product-fort-title
+    div.footline
+    div.foot {
+    transform: translateY(-100%);
+    background-image: url(../public/image/foot.png);
+    width: 100%;
+    height: 150%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    overflow: hidden;
+    position: absolute;
+    clip-path: inset(0 100% 0 0);
+    opacity: 0;
+    animation: footanimation 10s infinite forwards;
+  }
+
+  /* 標題-PRODUCT */
+  body
+    div.serices-product
+    div.serices-product-title
+    div.serices-product-tit
+    div.serices-product-back-title {
+    width: 80%;
+    color: rgba(176, 180, 157, 0.15);
+    font-size: 55px;
+    letter-spacing: 10.4px;
+    line-height: 0;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgba(98, 110, 69, 0.15);
+    text-transform: uppercase;
+    padding-bottom: 0;
+  }
+  body div.serices-product div.serices-product-title div.button {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 15%;
+  }
+  /* 看更多按鈕 */
+  body
+    div.serices-product
+    div.serices-product-title
+    div.button
+    button.viewmore-button {
+    width: 100%;
+    height: 150%;
+    font-size: 20px;
+    font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+    background-color: #ffffff00;
+    border: 2px solid #626e45;
+    border-style: dashed;
+    border-width: 1px;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  body
+    div.serices-product
+    div.serices-product-title
+    div.button
+    button.viewmore-button:hover {
+    background-color: #626e45;
+    color: #ffffff;
+    animation: shadowSpreadContinuous 0.9s linear infinite;
+  }
+  /* 內容 */
+  body div.serices-product div.serices-product-allcontect {
+    padding: 30px 30px 30px 30px;
+    height: 86%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    overflow: hidden;
+  }
+
+  /*  所有產品內容 */
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.serices-product-contect {
+    width: 355%;
+    display: flex;
+  }
+  /* 單篇產品 */
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.serices-product-contect
+    div.item {
+    position: relative;
+    border-radius: 10% 10% 10% 10%;
+    transition: transform 0.5s ease, background-color 0.5s ease;
+  }
+  /* 單篇產品下的div背景，幫助item再hover時會有效過  */
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.serices-product-contect
+    div.item
+    div.item-background {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 10% 10% 10% 10%;
+    z-index: -2;
+    transition: transform 0.5s ease, background-color 0.5s ease;
+  }
+  /* 單篇產品文字 */
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.serices-product-contect
+    div.item
+    div.txt {
+    display: flex;
+    position: absolute;
+    transform: translateY(-100%);
+    height: 100%;
+    align-items: flex-end;
+    border-radius: 10% 10% 10% 10%;
+    overflow: hidden;
+    transition: background-color 0.5s ease;
+  }
+  /* 單篇產品連結在hover時會浮上 */
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.serices-product-contect
+    div.item
+    .txt
+    .txt-link {
+    display: flex;
+    position: absolute;
+    z-index: 1;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(100%);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    opacity: 0;
+  }
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.serices-product-contect
+    div.item:hover
+    .txt
+    .txt-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 1;
+    height: 100%;
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.serices-product-contect
+    div.item
+    div.txt
+    div.txt-link
+    a {
+    text-decoration: none;
+    background-color: white;
+    width: 20%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+  }
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.serices-product-contect
+    div.item
+    div.txt
+    p {
+    display: flex;
+    text-align: center;
+    font-size: 20px;
+    border-radius: 50% 50% 0 0;
+    height: 30%;
+    background-color: #ffffffb3;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    letter-spacing: 5.5px;
+    position: relative;
+    z-index: 2;
+    transition: background-color 0.5s ease, color 0.5s ease;
+  }
+  /* 單篇產品圖片hover時背景跑出 */
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.serices-product-contect
+    div.item
+    div.icon {
+    border-radius: 10% 10% 10% 10%;
+    overflow: hidden;
+  }
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.serices-product-contect
+    div.item:hover
+    div.item-background {
+    background-color: #7c8b5780;
+    transform: rotate(-15deg);
+    box-shadow: 4px 10px 20px 5px rgba(0, 0, 0, 0.2);
+  }
+
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.serices-product-contect
+    div.item:hover
+    div.txt {
+    background-color: #7a806992;
+  }
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.serices-product-contect
+    div.item:hover
+    div.txt
+    p {
+    background-color: #626e45;
+    color: #ffffff;
+  }
+  /* 按鈕及進度條的div */
+  body div.serices-product div.serices-product-allcontect div.aaa {
+    width: 100%;
+    padding: 0 30px 0 30px;
+    display: flex;
+    align-items: center;
+  }
+  /* 顯示當前項目和總項目數 */
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.aaa
+    div.page-number {
+    width: 10%;
+    margin: 10px;
+    font-size: 25px;
+    text-transform: uppercase;
+    color: rgb(153, 153, 153);
+  }
+  /* 進度條 */
+  body div.serices-product div.serices-product-allcontect div.aaa progress {
+    height: 8px;
+    border-radius: 20px;
+    background-color: #d4d5c7;
+    appearance: none;
+    width: 75%;
+  }
+  /* 設置進度條背景色 */
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.aaa
+    progress::-webkit-progress-bar {
+    background-color: #d4d5c7;
+    border-radius: 20px;
+  }
+
+  /* 設置進度條顏色 */
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.aaa
+    progress::-webkit-progress-value {
+    background-color: #626e45;
+    border-radius: 20px;
+    transition: width 0.5s ease-in-out, background-color 0.3s ease-in-out;
+  }
+  /* 按鈕 */
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.aaa
+    div.pagebutton {
+    width: 20%;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 10px;
+  }
+
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.aaa
+    div.pagebutton
+    button.probtn,
+  button.nextbtn {
+    width: 60px;
+    height: 60px;
+    font-size: 32px;
+    background: #626e45;
+    color: white;
+    text-align: center;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+  }
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.aaa
+    div.pagebutton
+    button.probtn:hover,
+  button.nextbtn:hover {
+    background-color: #4a5d33;
+  }
+  /* 查看更多按鈕的效果 */
+  @keyframes shadowSpreadContinuous {
+    0% {
+      box-shadow: 0 0 1px 0px #626e458f, 0 0 1px 0px #626e4526,
+        0 0 1px 0px #626e4512;
+    }
+    100% {
+      box-shadow: 0 0 1px 10px transparent, 0 0 1px 20px transparent,
+        0 0 1px 30px transparent;
+    }
+  }
+  /* 狗狗腳印的效果 */
+  @keyframes footanimation {
+    0% {
+      clip-path: inset(0 100% 0 0); /* 開始時圖片完全隱藏 */
+      opacity: 0; /* 開始時透明 */
+    }
+    33% {
+      clip-path: inset(0 0 0 0); /* 33% 時，圖片完全顯示 */
+      opacity: 1; /* 圖片完全顯示 */
+    }
+    66% {
+      clip-path: inset(0 0 0 0); /* 66% 時，圖片保持顯示 */
+      opacity: 1; /* 圖片保持顯示 */
+    }
+    100% {
+      clip-path: inset(0 0 0 0); /* 100% 時，圖片保持顯示 */
+      opacity: 0; /* 圖片慢慢變透明 */
+    }
+  }
+}
+@media (min-width: 992px) {
+  /* 背景 */
+  body div.serices-product {
+    background-image: url(../public/image/pro_bg.png);
+    padding: 100px 0 0 0;
+    height: 962px;
+    background-repeat: no-repeat;
+  }
+  /* 標題(含前後字) */
+  body div.serices-product div.serices-product-title {
+    padding: 50px 50px 0 50px;
+    display: flex;
+    justify-content: space-between;
+  }
+  /* 標題-系列產品 */
+  body
+    div.serices-product
+    div.serices-product-title
+    div.serices-product-tit
+    div.serices-product-fort-title {
+    width: 80%;
+    display: flex;
+  }
+  body
+    div.serices-product
+    div.serices-product-title
+    div.serices-product-tit
+    div.serices-product-fort-title
+    h2 {
+    transform: translateY(-50%);
+    width: 25%;
+    margin: 0 auto;
+    color: #363636;
+    font-size: 25px;
+    font-weight: 600;
+    font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+    letter-spacing: 4px;
+  }
+  /* 狗狗腳印與虛線 */
+  body
+    div.serices-product
+    div.serices-product-title
+    div.serices-product-tit
+    div.serices-product-fort-title
+    div.footline {
+    transform: translateY(-50%);
+    position: relative;
+  }
+  /* 虛線 */
+  body
+    div.serices-product
+    div.serices-product-title
+    div.serices-product-tit
+    div.serices-product-fort-title
+    div.footline
+    div.line {
+    background-image: url(../public/image/title_line.png);
+    width: 100%;
+    height: 150%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+  /* 腳印 */
+  body
+    div.serices-product
+    div.serices-product-title
+    div.serices-product-tit
+    div.serices-product-fort-title
+    div.footline
+    div.foot {
+    transform: translateY(-100%);
+    background-image: url(../public/image/foot.png);
+    width: 100%;
+    height: 150%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    overflow: hidden;
+    position: absolute;
+    clip-path: inset(0 100% 0 0);
+    opacity: 0;
+    animation: footanimation 10s infinite forwards;
+  }
+
+  /* 標題-PRODUCT */
+  body
+    div.serices-product
+    div.serices-product-title
+    div.serices-product-tit
+    div.serices-product-back-title {
+    width: 80%;
+    color: rgba(176, 180, 157, 0.15);
+    font-size: 40px;
+    letter-spacing: 10.4px;
+    line-height: 0;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgba(98, 110, 69, 0.15);
+    text-transform: uppercase;
+    padding-bottom: 0;
+  }
+  body div.serices-product div.serices-product-title div.button {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 15%;
+  }
+  /* 看更多按鈕 */
+  body
+    div.serices-product
+    div.serices-product-title
+    div.button
+    button.viewmore-button {
+    width: 100%;
+    height: 3rem;
+    font-size: 16px;
+    font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+    background-color: #ffffff00;
+    border: 2px solid #626e45;
+    color: #626e45;
+    border-style: dashed;
+    border-width: 1px;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  body
+    div.serices-product
+    div.serices-product-title
+    div.button
+    button.viewmore-button:hover {
+    background-color: #626e45;
+    color: #ffffff;
+    animation: shadowSpreadContinuous 0.9s linear infinite;
+  }
+  /* 內容 */
+  body div.serices-product div.serices-product-allcontect {
+    padding: 30px 30px 30px 30px;
+    height: 86%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    overflow: hidden;
+  }
+
+  /*  所有產品內容 */
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.serices-product-contect {
+    width: 355%;
+    display: flex;
+  }
+  /* 單篇產品 */
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.serices-product-contect
+    div.item {
+    position: relative;
+    border-radius: 10% 10% 10% 10%;
+    transition: transform 0.5s ease, background-color 0.5s ease;
+  }
+  /* 單篇產品下的div背景，幫助item再hover時會有效過  */
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.serices-product-contect
+    div.item
+    div.item-background {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 10% 10% 10% 10%;
+    z-index: -2;
+    transition: transform 0.5s ease, background-color 0.5s ease;
+  }
+  /* 單篇產品文字 */
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.serices-product-contect
+    div.item
+    div.txt {
+    display: flex;
+    position: absolute;
+    transform: translateY(-100%);
+    height: 100%;
+    align-items: flex-end;
+    border-radius: 10% 10% 10% 10%;
+    overflow: hidden;
+    transition: background-color 0.5s ease;
+  }
+  /* 單篇產品連結在hover時會浮上 */
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.serices-product-contect
+    div.item
+    .txt
+    .txt-link {
+    display: flex;
+    position: absolute;
+    z-index: 1;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(100%);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    opacity: 0;
+  }
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.serices-product-contect
+    div.item:hover
+    .txt
+    .txt-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 1;
+    height: 100%;
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.serices-product-contect
+    div.item
+    div.txt
+    div.txt-link
+    a {
+    text-decoration: none;
+    background-color: white;
+    width: 20%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+  }
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.serices-product-contect
+    div.item
+    div.txt
+    p {
+    display: flex;
+    text-align: center;
+    font-size: 20px;
+    border-radius: 50% 50% 0 0;
+    height: 30%;
+    background-color: #ffffffb3;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    letter-spacing: 5.5px;
+    position: relative;
+    z-index: 2;
+    transition: background-color 0.5s ease, color 0.5s ease;
+  }
+  /* 單篇產品圖片hover時背景跑出 */
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.serices-product-contect
+    div.item
+    div.icon {
+    border-radius: 10% 10% 10% 10%;
+    overflow: hidden;
+  }
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.serices-product-contect
+    div.item:hover
+    div.item-background {
+    background-color: #7c8b5780;
+    transform: rotate(-15deg);
+    box-shadow: 4px 10px 20px 5px rgba(0, 0, 0, 0.2);
+  }
+
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.serices-product-contect
+    div.item:hover
+    div.txt {
+    background-color: #7a806992;
+  }
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.serices-product-contect
+    div.item:hover
+    div.txt
+    p {
+    background-color: #626e45;
+    color: #ffffff;
+  }
+  /* 按鈕及進度條的div */
+  body div.serices-product div.serices-product-allcontect div.aaa {
+    width: 100%;
+    padding: 0 30px 0 30px;
+    display: flex;
+    align-items: center;
+  }
+  /* 顯示當前項目和總項目數 */
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.aaa
+    div.page-number {
+    width: 10%;
+    margin: 10px;
+    font-size: 25px;
+    text-transform: uppercase;
+    color: rgb(153, 153, 153);
+  }
+  /* 進度條 */
+  body div.serices-product div.serices-product-allcontect div.aaa progress {
+    height: 8px;
+    border-radius: 20px;
+    background-color: #d4d5c7;
+    appearance: none;
+    width: 75%;
+  }
+  /* 設置進度條背景色 */
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.aaa
+    progress::-webkit-progress-bar {
+    background-color: #d4d5c7;
+    border-radius: 20px;
+  }
+
+  /* 設置進度條顏色 */
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.aaa
+    progress::-webkit-progress-value {
+    background-color: #626e45;
+    border-radius: 20px;
+    transition: width 0.5s ease-in-out, background-color 0.3s ease-in-out;
+  }
+  /* 按鈕 */
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.aaa
+    div.pagebutton {
+    width: 20%;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 10px;
+  }
+
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.aaa
+    div.pagebutton
+    button.probtn {
+    width: 50px;
+    height: 50px;
+    font-size: 32px;
+    background: #626e45;
+    color: white;
+    text-align: center;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+  }
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.aaa
+    div.pagebutton
+    button.nextbtn {
+    width: 50px;
+    height: 50px;
+    font-size: 32px;
+    background: #626e45;
+    color: white;
+    text-align: center;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+  }
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.aaa
+    div.pagebutton
+    button.probtn:hover,
+  button.nextbtn:hover {
+    background-color: #4a5d33;
+  }
+  /* 查看更多按鈕的效果 */
+  @keyframes shadowSpreadContinuous {
+    0% {
+      box-shadow: 0 0 1px 0px #626e458f, 0 0 1px 0px #626e4526,
+        0 0 1px 0px #626e4512;
+    }
+    100% {
+      box-shadow: 0 0 1px 10px transparent, 0 0 1px 20px transparent,
+        0 0 1px 30px transparent;
+    }
+  }
+  /* 狗狗腳印的效果 */
+  @keyframes footanimation {
+    0% {
+      clip-path: inset(0 100% 0 0); /* 開始時圖片完全隱藏 */
+      opacity: 0; /* 開始時透明 */
+    }
+    33% {
+      clip-path: inset(0 0 0 0); /* 33% 時，圖片完全顯示 */
+      opacity: 1; /* 圖片完全顯示 */
+    }
+    66% {
+      clip-path: inset(0 0 0 0); /* 66% 時，圖片保持顯示 */
+      opacity: 1; /* 圖片保持顯示 */
+    }
+    100% {
+      clip-path: inset(0 0 0 0); /* 100% 時，圖片保持顯示 */
+      opacity: 0; /* 圖片慢慢變透明 */
+    }
+  }
+}
+@media (min-width: 1200px) {
+  /* 背景 */
+  body div.serices-product {
+    background-image: url(../public/image/pro_bg.png);
+    padding: 100px 0 0 0;
+    height: 962px;
+    background-repeat: no-repeat;
+  }
+  /* 標題(含前後字) */
+  body div.serices-product div.serices-product-title {
+    padding: 50px 50px 0 50px;
+    display: flex;
+    justify-content: space-between;
+  }
+  /* 標題-系列產品 */
+  body
+    div.serices-product
+    div.serices-product-title
+    div.serices-product-tit
+    div.serices-product-fort-title {
+    width: 80%;
+    display: flex;
+  }
+  body
+    div.serices-product
+    div.serices-product-title
+    div.serices-product-tit
+    div.serices-product-fort-title
+    h2 {
+    transform: translateY(-50%);
+    width: 25%;
+    margin: 0 auto;
+    color: #363636;
+    font-size: 30px;
+    font-weight: 600;
+    font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+    letter-spacing: 4px;
+  }
+  /* 狗狗腳印與虛線 */
+  body
+    div.serices-product
+    div.serices-product-title
+    div.serices-product-tit
+    div.serices-product-fort-title
+    div.footline {
+    transform: translateY(-50%);
+    position: relative;
+  }
+  /* 虛線 */
+  body
+    div.serices-product
+    div.serices-product-title
+    div.serices-product-tit
+    div.serices-product-fort-title
+    div.footline
+    div.line {
+    background-image: url(../public/image/title_line.png);
+    width: 100%;
+    height: 150%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+  /* 腳印 */
+  body
+    div.serices-product
+    div.serices-product-title
+    div.serices-product-tit
+    div.serices-product-fort-title
+    div.footline
+    div.foot {
+    transform: translateY(-100%);
+    background-image: url(../public/image/foot.png);
+    width: 100%;
+    height: 150%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    overflow: hidden;
+    position: absolute;
+    clip-path: inset(0 100% 0 0);
+    opacity: 0;
+    animation: footanimation 10s infinite forwards;
+  }
+
+  /* 標題-PRODUCT */
+  body
+    div.serices-product
+    div.serices-product-title
+    div.serices-product-tit
+    div.serices-product-back-title {
+    width: 80%;
+    color: rgba(176, 180, 157, 0.15);
+    font-size: 55px;
+    letter-spacing: 10.4px;
+    line-height: 0;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgba(98, 110, 69, 0.15);
+    text-transform: uppercase;
+    padding-bottom: 0;
+  }
+  body div.serices-product div.serices-product-title div.button {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 15%;
+  }
+  /* 看更多按鈕 */
+  body
+    div.serices-product
+    div.serices-product-title
+    div.button
+    button.viewmore-button {
+    width: 100%;
+    height: 4rem;
+    font-size: 20px;
+    font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+    background-color: #ffffff00;
+    border: 2px solid #626e45;
+    color: #626e45;
+    border-style: dashed;
+    border-width: 1px;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  body
+    div.serices-product
+    div.serices-product-title
+    div.button
+    button.viewmore-button:hover {
+    background-color: #626e45;
+    color: #ffffff;
+    animation: shadowSpreadContinuous 0.9s linear infinite;
+  }
+  /* 內容 */
+  body div.serices-product div.serices-product-allcontect {
+    padding: 30px 30px 30px 30px;
+    height: 86%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    overflow: hidden;
+  }
+
+  /*  所有產品內容 */
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.serices-product-contect {
+    width: 355%;
+    display: flex;
+  }
+  /* 單篇產品 */
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.serices-product-contect
+    div.item {
+    position: relative;
+    border-radius: 10% 10% 10% 10%;
+    transition: transform 0.5s ease, background-color 0.5s ease;
+  }
+  /* 單篇產品下的div背景，幫助item再hover時會有效過  */
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.serices-product-contect
+    div.item
+    div.item-background {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 10% 10% 10% 10%;
+    z-index: -2;
+    transition: transform 0.5s ease, background-color 0.5s ease;
+  }
+  /* 單篇產品文字 */
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.serices-product-contect
+    div.item
+    div.txt {
+    display: flex;
+    position: absolute;
+    transform: translateY(-100%);
+    height: 100%;
+    align-items: flex-end;
+    border-radius: 10% 10% 10% 10%;
+    overflow: hidden;
+    transition: background-color 0.5s ease;
+  }
+  /* 單篇產品連結在hover時會浮上 */
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.serices-product-contect
+    div.item
+    .txt
+    .txt-link {
+    display: flex;
+    position: absolute;
+    z-index: 1;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(100%);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    opacity: 0;
+  }
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.serices-product-contect
+    div.item:hover
+    .txt
+    .txt-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 1;
+    height: 100%;
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.serices-product-contect
+    div.item
+    div.txt
+    div.txt-link
+    a {
+    text-decoration: none;
+    background-color: white;
+    width: 20%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+  }
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.serices-product-contect
+    div.item
+    div.txt
+    p {
+    display: flex;
+    text-align: center;
+    font-size: 20px;
+    border-radius: 50% 50% 0 0;
+    height: 30%;
+    background-color: #ffffffb3;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    letter-spacing: 5.5px;
+    position: relative;
+    z-index: 2;
+    transition: background-color 0.5s ease, color 0.5s ease;
+  }
+  /* 單篇產品圖片hover時背景跑出 */
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.serices-product-contect
+    div.item
+    div.icon {
+    border-radius: 10% 10% 10% 10%;
+    overflow: hidden;
+  }
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.serices-product-contect
+    div.item:hover
+    div.item-background {
+    background-color: #7c8b5780;
+    transform: rotate(-15deg);
+    box-shadow: 4px 10px 20px 5px rgba(0, 0, 0, 0.2);
+  }
+
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.serices-product-contect
+    div.item:hover
+    div.txt {
+    background-color: #7a806992;
+  }
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.serices-product-contect
+    div.item:hover
+    div.txt
+    p {
+    background-color: #626e45;
+    color: #ffffff;
+  }
+  /* 按鈕及進度條的div */
+  body div.serices-product div.serices-product-allcontect div.aaa {
+    width: 100%;
+    padding: 0 30px 0 30px;
+    display: flex;
+    align-items: center;
+  }
+  /* 顯示當前項目和總項目數 */
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.aaa
+    div.page-number {
+    width: 10%;
+    margin: 10px;
+    font-size: 30px;
+    text-transform: uppercase;
+    color: rgb(153, 153, 153);
+  }
+  /* 進度條 */
+  body div.serices-product div.serices-product-allcontect div.aaa progress {
+    height: 8px;
+    border-radius: 20px;
+    background-color: #d4d5c7;
+    appearance: none;
+    width: 75%;
+  }
+  /* 設置進度條背景色 */
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.aaa
+    progress::-webkit-progress-bar {
+    background-color: #d4d5c7;
+    border-radius: 20px;
+  }
+
+  /* 設置進度條顏色 */
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.aaa
+    progress::-webkit-progress-value {
+    background-color: #626e45;
+    border-radius: 20px;
+    transition: width 0.5s ease-in-out, background-color 0.3s ease-in-out;
+  }
+  /* 按鈕 */
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.aaa
+    div.pagebutton {
+    width: 20%;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 10px;
+  }
+
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.aaa
+    div.pagebutton
+    button.probtn {
+    width: 60px;
+    height: 60px;
+    font-size: 32px;
+    background: #626e45;
+    color: white;
+    text-align: center;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+  }
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.aaa
+    div.pagebutton
+    button.nextbtn {
+    width: 60px;
+    height: 60px;
+    font-size: 32px;
+    background: #626e45;
+    color: white;
+    text-align: center;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+  }
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.aaa
+    div.pagebutton
+    button.probtn:hover,
+  button.nextbtn:hover {
+    background-color: #4a5d33;
+  }
+  /* 查看更多按鈕的效果 */
+  @keyframes shadowSpreadContinuous {
+    0% {
+      box-shadow: 0 0 1px 0px #626e458f, 0 0 1px 0px #626e4526,
+        0 0 1px 0px #626e4512;
+    }
+    100% {
+      box-shadow: 0 0 1px 10px transparent, 0 0 1px 20px transparent,
+        0 0 1px 30px transparent;
+    }
+  }
+  /* 狗狗腳印的效果 */
+  @keyframes footanimation {
+    0% {
+      clip-path: inset(0 100% 0 0); /* 開始時圖片完全隱藏 */
+      opacity: 0; /* 開始時透明 */
+    }
+    33% {
+      clip-path: inset(0 0 0 0); /* 33% 時，圖片完全顯示 */
+      opacity: 1; /* 圖片完全顯示 */
+    }
+    66% {
+      clip-path: inset(0 0 0 0); /* 66% 時，圖片保持顯示 */
+      opacity: 1; /* 圖片保持顯示 */
+    }
+    100% {
+      clip-path: inset(0 0 0 0); /* 100% 時，圖片保持顯示 */
+      opacity: 0; /* 圖片慢慢變透明 */
+    }
+  }
+}
+@media (min-width: 1400px) {
+  /* 背景 */
+  body div.serices-product {
+    background-image: url(../public/image/pro_bg.png);
+    padding: 100px 0 0 0;
+    height: 962px;
+    background-repeat: no-repeat;
+  }
+  /* 標題(含前後字) */
+  body div.serices-product div.serices-product-title {
+    padding: 50px 50px 0 50px;
+    display: flex;
+    justify-content: space-between;
+  }
+  /* 標題-系列產品 */
+  body
+    div.serices-product
+    div.serices-product-title
+    div.serices-product-tit
+    div.serices-product-fort-title {
+    width: 80%;
+    display: flex;
+  }
+  body
+    div.serices-product
+    div.serices-product-title
+    div.serices-product-tit
+    div.serices-product-fort-title
+    h2 {
+    transform: translateY(-50%);
+    width: 25%;
+    margin: 0 auto;
+    color: #363636;
+    font-size: 30px;
+    font-weight: 600;
+    font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+    letter-spacing: 4px;
+  }
+  /* 狗狗腳印與虛線 */
+  body
+    div.serices-product
+    div.serices-product-title
+    div.serices-product-tit
+    div.serices-product-fort-title
+    div.footline {
+    transform: translateY(-50%);
+    position: relative;
+  }
+  /* 虛線 */
+  body
+    div.serices-product
+    div.serices-product-title
+    div.serices-product-tit
+    div.serices-product-fort-title
+    div.footline
+    div.line {
+    background-image: url(../public/image/title_line.png);
+    width: 100%;
+    height: 150%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+  /* 腳印 */
+  body
+    div.serices-product
+    div.serices-product-title
+    div.serices-product-tit
+    div.serices-product-fort-title
+    div.footline
+    div.foot {
+    transform: translateY(-100%);
+    background-image: url(../public/image/foot.png);
+    width: 100%;
+    height: 150%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    overflow: hidden;
+    position: absolute;
+    clip-path: inset(0 100% 0 0);
+    opacity: 0;
+    animation: footanimation 10s infinite forwards;
+  }
+
+  /* 標題-PRODUCT */
+  body
+    div.serices-product
+    div.serices-product-title
+    div.serices-product-tit
+    div.serices-product-back-title {
+    width: 80%;
+    color: rgba(176, 180, 157, 0.15);
+    font-size: 55px;
+    letter-spacing: 10.4px;
+    line-height: 0;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgba(98, 110, 69, 0.15);
+    text-transform: uppercase;
+    padding-bottom: 0;
+  }
+  body div.serices-product div.serices-product-title div.button {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 15%;
+  }
+  /* 看更多按鈕 */
+  body
+    div.serices-product
+    div.serices-product-title
+    div.button
+    button.viewmore-button {
+    width: 100%;
+    height: 4rem;
+    font-size: 20px;
+    font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+    background-color: #ffffff00;
+    border: 2px solid #626e45;
+    color: #626e45;
+    border-style: dashed;
+    border-width: 1px;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  body
+    div.serices-product
+    div.serices-product-title
+    div.button
+    button.viewmore-button:hover {
+    background-color: #626e45;
+    color: #ffffff;
+    animation: shadowSpreadContinuous 0.9s linear infinite;
+  }
+  /* 內容 */
+  body div.serices-product div.serices-product-allcontect {
+    padding: 30px 30px 30px 30px;
+    height: 86%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    overflow: hidden;
+  }
+
+  /*  所有產品內容 */
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.serices-product-contect {
+    width: 355%;
+    display: flex;
+  }
+  /* 單篇產品 */
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.serices-product-contect
+    div.item {
+    position: relative;
+    border-radius: 10% 10% 10% 10%;
+    transition: transform 0.5s ease, background-color 0.5s ease;
+  }
+  /* 單篇產品下的div背景，幫助item再hover時會有效過  */
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.serices-product-contect
+    div.item
+    div.item-background {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 10% 10% 10% 10%;
+    z-index: -2;
+    transition: transform 0.5s ease, background-color 0.5s ease;
+  }
+  /* 單篇產品文字 */
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.serices-product-contect
+    div.item
+    div.txt {
+    display: flex;
+    position: absolute;
+    transform: translateY(-100%);
+    height: 100%;
+    align-items: flex-end;
+    border-radius: 10% 10% 10% 10%;
+    overflow: hidden;
+    transition: background-color 0.5s ease;
+  }
+  /* 單篇產品連結在hover時會浮上 */
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.serices-product-contect
+    div.item
+    .txt
+    .txt-link {
+    display: flex;
+    position: absolute;
+    z-index: 1;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(100%);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    opacity: 0;
+  }
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.serices-product-contect
+    div.item:hover
+    .txt
+    .txt-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 1;
+    height: 100%;
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.serices-product-contect
+    div.item
+    div.txt
+    div.txt-link
+    a {
+    text-decoration: none;
+    background-color: white;
+    width: 20%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+  }
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.serices-product-contect
+    div.item
+    div.txt
+    p {
+    display: flex;
+    text-align: center;
+    font-size: 20px;
+    border-radius: 50% 50% 0 0;
+    height: 30%;
+    background-color: #ffffffb3;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    letter-spacing: 5.5px;
+    position: relative;
+    z-index: 2;
+    transition: background-color 0.5s ease, color 0.5s ease;
+  }
+  /* 單篇產品圖片hover時背景跑出 */
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.serices-product-contect
+    div.item
+    div.icon {
+    border-radius: 10% 10% 10% 10%;
+    overflow: hidden;
+  }
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.serices-product-contect
+    div.item:hover
+    div.item-background {
+    background-color: #7c8b5780;
+    transform: rotate(-15deg);
+    box-shadow: 4px 10px 20px 5px rgba(0, 0, 0, 0.2);
+  }
+
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.serices-product-contect
+    div.item:hover
+    div.txt {
+    background-color: #7a806992;
+  }
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.serices-product-contect
+    div.item:hover
+    div.txt
+    p {
+    background-color: #626e45;
+    color: #ffffff;
+  }
+  /* 按鈕及進度條的div */
+  body div.serices-product div.serices-product-allcontect div.aaa {
+    width: 100%;
+    padding: 0 30px 0 30px;
+    display: flex;
+    align-items: center;
+  }
+  /* 顯示當前項目和總項目數 */
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.aaa
+    div.page-number {
+    width: 10%;
+    margin: 10px;
+    font-size: 30px;
+    text-transform: uppercase;
+    color: rgb(153, 153, 153);
+  }
+  /* 進度條 */
+  body div.serices-product div.serices-product-allcontect div.aaa progress {
+    height: 8px;
+    border-radius: 20px;
+    background-color: #d4d5c7;
+    appearance: none;
+    width: 75%;
+  }
+  /* 設置進度條背景色 */
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.aaa
+    progress::-webkit-progress-bar {
+    background-color: #d4d5c7;
+    border-radius: 20px;
+  }
+
+  /* 設置進度條顏色 */
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.aaa
+    progress::-webkit-progress-value {
+    background-color: #626e45;
+    border-radius: 20px;
+    transition: width 0.5s ease-in-out, background-color 0.3s ease-in-out;
+  }
+  /* 按鈕 */
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.aaa
+    div.pagebutton {
+    width: 20%;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 10px;
+  }
+
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.aaa
+    div.pagebutton
+    button.probtn {
+    width: 60px;
+    height: 60px;
+    font-size: 32px;
+    background: #626e45;
+    color: white;
+    text-align: center;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+  }
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.aaa
+    div.pagebutton
+    button.nextbtn {
+    width: 60px;
+    height: 60px;
+    font-size: 32px;
+    background: #626e45;
+    color: white;
+    text-align: center;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+  }
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.aaa
+    div.pagebutton
+    button.probtn:hover,
+  button.nextbtn:hover {
+    background-color: #4a5d33;
+  }
+  /* 查看更多按鈕的效果 */
+  @keyframes shadowSpreadContinuous {
+    0% {
+      box-shadow: 0 0 1px 0px #626e458f, 0 0 1px 0px #626e4526,
+        0 0 1px 0px #626e4512;
+    }
+    100% {
+      box-shadow: 0 0 1px 10px transparent, 0 0 1px 20px transparent,
+        0 0 1px 30px transparent;
+    }
+  }
+  /* 狗狗腳印的效果 */
+  @keyframes footanimation {
+    0% {
+      clip-path: inset(0 100% 0 0); /* 開始時圖片完全隱藏 */
+      opacity: 0; /* 開始時透明 */
+    }
+    33% {
+      clip-path: inset(0 0 0 0); /* 33% 時，圖片完全顯示 */
+      opacity: 1; /* 圖片完全顯示 */
+    }
+    66% {
+      clip-path: inset(0 0 0 0); /* 66% 時，圖片保持顯示 */
+      opacity: 1; /* 圖片保持顯示 */
+    }
+    100% {
+      clip-path: inset(0 0 0 0); /* 100% 時，圖片保持顯示 */
+      opacity: 0; /* 圖片慢慢變透明 */
+    }
+  }
+}
+@media (min-width: 1700px) {
+  /* 背景 */
+  body div.serices-product {
+    background-image: url(../public/image/pro_bg.png);
+    padding: 100px 0 0 0;
+    height: 962px;
+    background-repeat: no-repeat;
+  }
+  /* 標題(含前後字) */
+  body div.serices-product div.serices-product-title {
+    padding: 50px 50px 0 50px;
+    display: flex;
+    justify-content: space-between;
+  }
+  /* 標題-系列產品 */
+  body
+    div.serices-product
+    div.serices-product-title
+    div.serices-product-tit
+    div.serices-product-fort-title {
+    width: 80%;
+    display: flex;
+  }
+  body
+    div.serices-product
+    div.serices-product-title
+    div.serices-product-tit
+    div.serices-product-fort-title
+    h2 {
+    transform: translateY(-50%);
+    width: 25%;
+    margin: 0 auto;
+    color: #363636;
+    font-size: 35px;
+    font-weight: 600;
+    font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+    letter-spacing: 4px;
+  }
+  /* 狗狗腳印與虛線 */
+  body
+    div.serices-product
+    div.serices-product-title
+    div.serices-product-tit
+    div.serices-product-fort-title
+    div.footline {
+    transform: translateY(-50%);
+    position: relative;
+  }
+  /* 虛線 */
+  body
+    div.serices-product
+    div.serices-product-title
+    div.serices-product-tit
+    div.serices-product-fort-title
+    div.footline
+    div.line {
+    background-image: url(../public/image/title_line.png);
+    width: 100%;
+    height: 150%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+  /* 腳印 */
+  body
+    div.serices-product
+    div.serices-product-title
+    div.serices-product-tit
+    div.serices-product-fort-title
+    div.footline
+    div.foot {
+    transform: translateY(-100%);
+    background-image: url(../public/image/foot.png);
+    width: 100%;
+    height: 150%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    overflow: hidden;
+    position: absolute;
+    clip-path: inset(0 100% 0 0);
+    opacity: 0;
+    animation: footanimation 10s infinite forwards;
+  }
+
+  /* 標題-PRODUCT */
+  body
+    div.serices-product
+    div.serices-product-title
+    div.serices-product-tit
+    div.serices-product-back-title {
+    width: 80%;
+    color: rgba(176, 180, 157, 0.15);
+    font-size: 60px;
+    letter-spacing: 10.4px;
+    line-height: 0;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgba(98, 110, 69, 0.15);
+    text-transform: uppercase;
+    padding-bottom: 0;
+  }
+  body div.serices-product div.serices-product-title div.button {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 15%;
+  }
+  /* 看更多按鈕 */
+  body
+    div.serices-product
+    div.serices-product-title
+    div.button
+    button.viewmore-button {
+    width: 100%;
+    height: 4rem;
+    font-size: 25px;
+    font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+    background-color: #ffffff00;
+    border: 2px solid #626e45;
+    color: #626e45;
+    border-style: dashed;
+    border-width: 1px;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  body
+    div.serices-product
+    div.serices-product-title
+    div.button
+    button.viewmore-button:hover {
+    background-color: #626e45;
+    color: #ffffff;
+    animation: shadowSpreadContinuous 0.9s linear infinite;
+  }
+  /* 內容 */
+  body div.serices-product div.serices-product-allcontect {
+    padding: 30px 30px 30px 30px;
+    height: 86%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    overflow: hidden;
+  }
+
+  /*  所有產品內容 */
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.serices-product-contect {
+    width: 355%;
+    display: flex;
+  }
+  /* 單篇產品 */
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.serices-product-contect
+    div.item {
+    position: relative;
+    border-radius: 10% 10% 10% 10%;
+    transition: transform 0.5s ease, background-color 0.5s ease;
+  }
+  /* 單篇產品下的div背景，幫助item再hover時會有效過  */
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.serices-product-contect
+    div.item
+    div.item-background {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 10% 10% 10% 10%;
+    z-index: -2;
+    transition: transform 0.5s ease, background-color 0.5s ease;
+  }
+  /* 單篇產品文字 */
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.serices-product-contect
+    div.item
+    div.txt {
+    display: flex;
+    position: absolute;
+    transform: translateY(-100%);
+    height: 100%;
+    align-items: flex-end;
+    border-radius: 10% 10% 10% 10%;
+    overflow: hidden;
+    transition: background-color 0.5s ease;
+  }
+  /* 單篇產品連結在hover時會浮上 */
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.serices-product-contect
+    div.item
+    .txt
+    .txt-link {
+    display: flex;
+    position: absolute;
+    z-index: 1;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(100%);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    opacity: 0;
+  }
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.serices-product-contect
+    div.item:hover
+    .txt
+    .txt-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 1;
+    height: 100%;
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.serices-product-contect
+    div.item
+    div.txt
+    div.txt-link
+    a {
+    text-decoration: none;
+    background-color: white;
+    width: 20%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+  }
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.serices-product-contect
+    div.item
+    div.txt
+    p {
+    display: flex;
+    text-align: center;
+    font-size: 20px;
+    border-radius: 50% 50% 0 0;
+    height: 30%;
+    background-color: #ffffffb3;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    letter-spacing: 5.5px;
+    position: relative;
+    z-index: 2;
+    transition: background-color 0.5s ease, color 0.5s ease;
+  }
+  /* 單篇產品圖片hover時背景跑出 */
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.serices-product-contect
+    div.item
+    div.icon {
+    border-radius: 10% 10% 10% 10%;
+    overflow: hidden;
+  }
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.serices-product-contect
+    div.item:hover
+    div.item-background {
+    background-color: #7c8b5780;
+    transform: rotate(-15deg);
+    box-shadow: 4px 10px 20px 5px rgba(0, 0, 0, 0.2);
+  }
+
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.serices-product-contect
+    div.item:hover
+    div.txt {
+    background-color: #7a806992;
+  }
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.serices-product-contect
+    div.item:hover
+    div.txt
+    p {
+    background-color: #626e45;
+    color: #ffffff;
+  }
+  /* 按鈕及進度條的div */
+  body div.serices-product div.serices-product-allcontect div.aaa {
+    width: 100%;
+    padding: 0 30px 0 30px;
+    display: flex;
+    align-items: center;
+  }
+  /* 顯示當前項目和總項目數 */
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.aaa
+    div.page-number {
+    width: 10%;
+    margin: 10px;
+    font-size: 35px;
+    text-transform: uppercase;
+    color: rgb(153, 153, 153);
+  }
+  /* 進度條 */
+  body div.serices-product div.serices-product-allcontect div.aaa progress {
+    height: 8px;
+    border-radius: 20px;
+    background-color: #d4d5c7;
+    appearance: none;
+    width: 75%;
+  }
+  /* 設置進度條背景色 */
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.aaa
+    progress::-webkit-progress-bar {
+    background-color: #d4d5c7;
+    border-radius: 20px;
+  }
+
+  /* 設置進度條顏色 */
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.aaa
+    progress::-webkit-progress-value {
+    background-color: #626e45;
+    border-radius: 20px;
+    transition: width 0.5s ease-in-out, background-color 0.3s ease-in-out;
+  }
+  /* 按鈕 */
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.aaa
+    div.pagebutton {
+    width: 20%;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 10px;
+  }
+
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.aaa
+    div.pagebutton
+    button.probtn {
+    width: 70px;
+    height: 70px;
+    font-size: 32px;
+    background: #626e45;
+    color: white;
+    text-align: center;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+  }
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.aaa
+    div.pagebutton
+    button.nextbtn {
+    width: 70px;
+    height: 70px;
+    font-size: 32px;
+    background: #626e45;
+    color: white;
+    text-align: center;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+  }
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.aaa
+    div.pagebutton
+    button.probtn:hover,
+  button.nextbtn:hover {
+    background-color: #4a5d33;
+  }
+  /* 查看更多按鈕的效果 */
+  @keyframes shadowSpreadContinuous {
+    0% {
+      box-shadow: 0 0 1px 0px #626e458f, 0 0 1px 0px #626e4526,
+        0 0 1px 0px #626e4512;
+    }
+    100% {
+      box-shadow: 0 0 1px 10px transparent, 0 0 1px 20px transparent,
+        0 0 1px 30px transparent;
+    }
+  }
+  /* 狗狗腳印的效果 */
+  @keyframes footanimation {
+    0% {
+      clip-path: inset(0 100% 0 0); /* 開始時圖片完全隱藏 */
+      opacity: 0; /* 開始時透明 */
+    }
+    33% {
+      clip-path: inset(0 0 0 0); /* 33% 時，圖片完全顯示 */
+      opacity: 1; /* 圖片完全顯示 */
+    }
+    66% {
+      clip-path: inset(0 0 0 0); /* 66% 時，圖片保持顯示 */
+      opacity: 1; /* 圖片保持顯示 */
+    }
+    100% {
+      clip-path: inset(0 0 0 0); /* 100% 時，圖片保持顯示 */
+      opacity: 0; /* 圖片慢慢變透明 */
+    }
+  }
+}
+@media (min-width: 2000px) {
+  /* 背景 */
+  body div.serices-product {
+    background-image: url(../public/image/pro_bg.png);
+    padding: 100px 0 0 0;
+    height: 962px;
+    background-repeat: no-repeat;
+  }
+  /* 標題(含前後字) */
+  body div.serices-product div.serices-product-title {
+    padding: 50px 50px 0 50px;
+    display: flex;
+    justify-content: space-between;
+  }
+  /* 標題-系列產品 */
+  body
+    div.serices-product
+    div.serices-product-title
+    div.serices-product-tit
+    div.serices-product-fort-title {
+    width: 80%;
+    display: flex;
+  }
+  body
+    div.serices-product
+    div.serices-product-title
+    div.serices-product-tit
+    div.serices-product-fort-title
+    h2 {
+    transform: translateY(-50%);
+    width: 25%;
+    margin: 0 auto;
+    color: #363636;
+    font-size: 50px;
+    font-weight: 600;
+    font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+    letter-spacing: 4px;
+  }
+  /* 狗狗腳印與虛線 */
+  body
+    div.serices-product
+    div.serices-product-title
+    div.serices-product-tit
+    div.serices-product-fort-title
+    div.footline {
+    transform: translateY(-50%);
+    position: relative;
+  }
+  /* 虛線 */
+  body
+    div.serices-product
+    div.serices-product-title
+    div.serices-product-tit
+    div.serices-product-fort-title
+    div.footline
+    div.line {
+    background-image: url(../public/image/title_line.png);
+    width: 100%;
+    height: 150%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+  /* 腳印 */
+  body
+    div.serices-product
+    div.serices-product-title
+    div.serices-product-tit
+    div.serices-product-fort-title
+    div.footline
+    div.foot {
+    transform: translateY(-100%);
+    background-image: url(../public/image/foot.png);
+    width: 100%;
+    height: 150%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    overflow: hidden;
+    position: absolute;
+    clip-path: inset(0 100% 0 0);
+    opacity: 0;
+    animation: footanimation 10s infinite forwards;
+  }
+
+  /* 標題-PRODUCT */
+  body
+    div.serices-product
+    div.serices-product-title
+    div.serices-product-tit
+    div.serices-product-back-title {
+    width: 80%;
+    color: rgba(176, 180, 157, 0.15);
+    font-size: 65px;
+    letter-spacing: 10.4px;
+    line-height: 0;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgba(98, 110, 69, 0.15);
+    text-transform: uppercase;
+    padding-bottom: 0;
+  }
+  body div.serices-product div.serices-product-title div.button {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 15%;
+  }
+  /* 看更多按鈕 */
+  body
+    div.serices-product
+    div.serices-product-title
+    div.button
+    button.viewmore-button {
+    width: 100%;
+    height: 6rem;
+    font-size: 30px;
+    font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+    background-color: #ffffff00;
+    border: 2px solid #626e45;
+    color: #626e45;
+    border-style: dashed;
+    border-width: 1px;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  body
+    div.serices-product
+    div.serices-product-title
+    div.button
+    button.viewmore-button:hover {
+    background-color: #626e45;
+    color: #ffffff;
+    animation: shadowSpreadContinuous 0.9s linear infinite;
+  }
+  /* 內容 */
+  body div.serices-product div.serices-product-allcontect {
+    padding: 30px 30px 30px 30px;
+    height: 86%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    overflow: hidden;
+  }
+
+  /*  所有產品內容 */
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.serices-product-contect {
+    width: 355%;
+    display: flex;
+  }
+  /* 單篇產品 */
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.serices-product-contect
+    div.item {
+    position: relative;
+    border-radius: 10% 10% 10% 10%;
+    transition: transform 0.5s ease, background-color 0.5s ease;
+  }
+  /* 單篇產品下的div背景，幫助item再hover時會有效過  */
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.serices-product-contect
+    div.item
+    div.item-background {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 10% 10% 10% 10%;
+    z-index: -2;
+    transition: transform 0.5s ease, background-color 0.5s ease;
+  }
+  /* 單篇產品文字 */
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.serices-product-contect
+    div.item
+    div.txt {
+    display: flex;
+    position: absolute;
+    transform: translateY(-100%);
+    height: 100%;
+    align-items: flex-end;
+    border-radius: 10% 10% 10% 10%;
+    overflow: hidden;
+    transition: background-color 0.5s ease;
+  }
+  /* 單篇產品連結在hover時會浮上 */
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.serices-product-contect
+    div.item
+    .txt
+    .txt-link {
+    display: flex;
+    position: absolute;
+    z-index: 1;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(100%);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    opacity: 0;
+  }
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.serices-product-contect
+    div.item:hover
+    .txt
+    .txt-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 1;
+    height: 100%;
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.serices-product-contect
+    div.item
+    div.txt
+    div.txt-link
+    a {
+    text-decoration: none;
+    background-color: white;
+    width: 20%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+  }
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.serices-product-contect
+    div.item
+    div.txt
+    p {
+    display: flex;
+    text-align: center;
+    font-size: 20px;
+    border-radius: 50% 50% 0 0;
+    height: 30%;
+    background-color: #ffffffb3;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    letter-spacing: 5.5px;
+    position: relative;
+    z-index: 2;
+    transition: background-color 0.5s ease, color 0.5s ease;
+  }
+  /* 單篇產品圖片hover時背景跑出 */
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.serices-product-contect
+    div.item
+    div.icon {
+    border-radius: 10% 10% 10% 10%;
+    overflow: hidden;
+  }
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.serices-product-contect
+    div.item:hover
+    div.item-background {
+    background-color: #7c8b5780;
+    transform: rotate(-15deg);
+    box-shadow: 4px 10px 20px 5px rgba(0, 0, 0, 0.2);
+  }
+
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.serices-product-contect
+    div.item:hover
+    div.txt {
+    background-color: #7a806992;
+  }
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.serices-product-contect
+    div.item:hover
+    div.txt
+    p {
+    background-color: #626e45;
+    color: #ffffff;
+  }
+  /* 按鈕及進度條的div */
+  body div.serices-product div.serices-product-allcontect div.aaa {
+    width: 100%;
+    padding: 0 30px 0 30px;
+    display: flex;
+    align-items: center;
+  }
+  /* 顯示當前項目和總項目數 */
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.aaa
+    div.page-number {
+    width: 10%;
+    margin: 10px;
+    font-size: 40px;
+    text-transform: uppercase;
+    color: rgb(153, 153, 153);
+    text-align: center;
+  }
+  /* 進度條 */
+  body div.serices-product div.serices-product-allcontect div.aaa progress {
+    height: 8px;
+    border-radius: 20px;
+    background-color: #d4d5c7;
+    appearance: none;
+    width: 75%;
+  }
+  /* 設置進度條背景色 */
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.aaa
+    progress::-webkit-progress-bar {
+    background-color: #d4d5c7;
+    border-radius: 20px;
+  }
+
+  /* 設置進度條顏色 */
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.aaa
+    progress::-webkit-progress-value {
+    background-color: #626e45;
+    border-radius: 20px;
+    transition: width 0.5s ease-in-out, background-color 0.3s ease-in-out;
+  }
+  /* 按鈕 */
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.aaa
+    div.pagebutton {
+    width: 20%;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 10px;
+  }
+
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.aaa
+    div.pagebutton
+    button.probtn {
+    width: 80px;
+    height: 80px;
+    font-size: 32px;
+    background: #626e45;
+    color: white;
+    text-align: center;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+  }
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.aaa
+    div.pagebutton
+    button.nextbtn {
+    width: 80px;
+    height: 80px;
+    font-size: 32px;
+    background: #626e45;
+    color: white;
+    text-align: center;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+  }
+  body
+    div.serices-product
+    div.serices-product-allcontect
+    div.aaa
+    div.pagebutton
+    button.probtn:hover,
+  button.nextbtn:hover {
+    background-color: #4a5d33;
+  }
+  /* 查看更多按鈕的效果 */
+  @keyframes shadowSpreadContinuous {
+    0% {
+      box-shadow: 0 0 1px 0px #626e458f, 0 0 1px 0px #626e4526,
+        0 0 1px 0px #626e4512;
+    }
+    100% {
+      box-shadow: 0 0 1px 10px transparent, 0 0 1px 20px transparent,
+        0 0 1px 30px transparent;
+    }
+  }
+  /* 狗狗腳印的效果 */
+  @keyframes footanimation {
+    0% {
+      clip-path: inset(0 100% 0 0); /* 開始時圖片完全隱藏 */
+      opacity: 0; /* 開始時透明 */
+    }
+    33% {
+      clip-path: inset(0 0 0 0); /* 33% 時，圖片完全顯示 */
+      opacity: 1; /* 圖片完全顯示 */
+    }
+    66% {
+      clip-path: inset(0 0 0 0); /* 66% 時，圖片保持顯示 */
+      opacity: 1; /* 圖片保持顯示 */
+    }
+    100% {
+      clip-path: inset(0 0 0 0); /* 100% 時，圖片保持顯示 */
+      opacity: 0; /* 圖片慢慢變透明 */
+    }
   }
 }

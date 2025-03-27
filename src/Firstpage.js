@@ -31,12 +31,11 @@ const Firstpage = () => {
           {/* 看更多按鈕 */}
           <button class="viewmore-button">View More </button>
         </div>
-      </div>
-
-      {/* 首頁介紹背景照片 */}
-      <div class="banner">
-        <img src=".//image/banner.jpg" alt="banner" />
-        <div class="banner-bottom"></div>
+        {/* 首頁介紹背景照片 */}
+        <div class="banner">
+          <img src=".//image/banner.jpg" alt="banner" />
+          <div class="banner-bottom"></div>
+        </div>
       </div>
     </div>
   );
