@@ -1372,7 +1372,9 @@
     div.brand-news-contect
     div.brand-news-txtbox
     div.item {
-    width: 35%;
+    width: 400px;
+    margin-left: 20px;
+    margin-right: 20px;
     height: 100%;
     position: relative;
   }
@@ -1391,8 +1393,8 @@
     background-color: #f1efe8;
     display: inline-block;
     padding: 5.5px 20px 7.5px 22px;
-    margin-bottom: 25px;
-    width: 27%;
+    margin-bottom: 15px;
+    width: 28%;
   }
   /* 單篇新聞的標題 */
   body
@@ -1403,9 +1405,10 @@
     div.item
     div.brand-news-contect-sec-title {
     color: #626e45;
-    font-size: 24px;
+    font-size: 19px;
     font-weight: 500;
     letter-spacing: 2.4px;
+    margin: 8px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -1418,12 +1421,12 @@
     div.brand-news-txtbox
     div.item
     div.brand-news-contect-txt {
-    font-size: 15px;
+    font-size: 17px;
     font-weight: 400;
     line-height: 1.866;
     letter-spacing: 1.95px;
     height: 56px;
-    margin-top: 8px;
+    margin: 8px;
     font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
     overflow: hidden;
   }
@@ -1437,6 +1440,7 @@
     div.image-box {
     border-radius: 10% 10% 10% 10%;
     position: relative;
+    width: 400px;
   }
   body
     div.brand-news
@@ -1449,6 +1453,7 @@
     border-radius: 10% 10% 10% 10%;
     position: relative;
     z-index: 2;
+    width: 400px;
   }
   /* 圖片下的div背景，幫助item再hover時會有效過 */
   body
@@ -1618,7 +1623,7 @@
   body div.brand-news {
     background-image: url(../public/image/article_bg.png);
     padding: 100px 0 100px 0;
-    height: 1000px;
+    height: 1100px;
     background-repeat: no-repeat;
   }
   /* 標題(含前後字) */
@@ -1776,7 +1781,9 @@
     div.brand-news-contect
     div.brand-news-txtbox
     div.item {
-    width: 35%;
+    width: 550px;
+    margin-left: 20px;
+    margin-right: 20px;
     height: 100%;
     position: relative;
   }
@@ -1789,14 +1796,14 @@
     div.item
     div.brand-news-contect-first-title {
     color: #626e45;
-    font-size: 17px;
+    font-size: 20px;
     font-weight: 400;
     border-radius: 9999px;
     background-color: #f1efe8;
     display: inline-block;
     padding: 5.5px 20px 7.5px 22px;
     margin-bottom: 25px;
-    width: 27%;
+    width: 23%;
   }
   /* 單篇新聞的標題 */
   body
@@ -1807,8 +1814,9 @@
     div.item
     div.brand-news-contect-sec-title {
     color: #626e45;
-    font-size: 24px;
+    font-size: 21px;
     font-weight: 500;
+    margin: 8px;
     letter-spacing: 2.4px;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -1822,12 +1830,12 @@
     div.brand-news-txtbox
     div.item
     div.brand-news-contect-txt {
-    font-size: 15px;
+    font-size: 19px;
     font-weight: 400;
     line-height: 1.866;
     letter-spacing: 1.95px;
     height: 56px;
-    margin-top: 8px;
+    margin: 8px;
     font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
     overflow: hidden;
   }
@@ -1841,6 +1849,7 @@
     div.image-box {
     border-radius: 10% 10% 10% 10%;
     position: relative;
+    width: 550px;
   }
   body
     div.brand-news
@@ -1853,6 +1862,7 @@
     border-radius: 10% 10% 10% 10%;
     position: relative;
     z-index: 2;
+    width: 550px;
   }
   /* 圖片下的div背景，幫助item再hover時會有效過 */
   body
@@ -2022,7 +2032,7 @@
   body div.brand-news {
     background-image: url(../public/image/article_bg.png);
     padding: 100px 0 100px 0;
-    height: 1000px;
+    height: 1150px;
     background-repeat: no-repeat;
   }
   /* 標題(含前後字) */
@@ -2180,7 +2190,9 @@
     div.brand-news-contect
     div.brand-news-txtbox
     div.item {
-    width: 35%;
+    width: 600px;
+    margin-left: 20px;
+    margin-right: 20px;
     height: 100%;
     position: relative;
   }
@@ -2193,14 +2205,14 @@
     div.item
     div.brand-news-contect-first-title {
     color: #626e45;
-    font-size: 17px;
+    font-size: 22px;
     font-weight: 400;
     border-radius: 9999px;
     background-color: #f1efe8;
     display: inline-block;
     padding: 5.5px 20px 7.5px 22px;
     margin-bottom: 25px;
-    width: 27%;
+    width: 22%;
   }
   /* 單篇新聞的標題 */
   body
@@ -2211,8 +2223,9 @@
     div.item
     div.brand-news-contect-sec-title {
     color: #626e45;
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 500;
+    margin: 8px;
     letter-spacing: 2.4px;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -2226,12 +2239,12 @@
     div.brand-news-txtbox
     div.item
     div.brand-news-contect-txt {
-    font-size: 15px;
+    font-size: 20px;
     font-weight: 400;
     line-height: 1.866;
+    margin: 8px;
     letter-spacing: 1.95px;
     height: 56px;
-    margin-top: 8px;
     font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
     overflow: hidden;
   }
@@ -2245,6 +2258,7 @@
     div.image-box {
     border-radius: 10% 10% 10% 10%;
     position: relative;
+    width: 600px;
   }
   body
     div.brand-news
@@ -2257,6 +2271,7 @@
     border-radius: 10% 10% 10% 10%;
     position: relative;
     z-index: 2;
+    width: 600px;
   }
   /* 圖片下的div背景，幫助item再hover時會有效過 */
   body
@@ -2426,7 +2441,7 @@
   body div.brand-news {
     background-image: url(../public/image/article_bg.png);
     padding: 100px 0 100px 0;
-    height: 1000px;
+    height: 1200px;
     background-repeat: no-repeat;
   }
   /* 標題(含前後字) */
@@ -2584,8 +2599,10 @@
     div.brand-news-contect
     div.brand-news-txtbox
     div.item {
-    width: 35%;
+    width: 650px;
     height: 100%;
+    margin-right: 25px;
+    margin-left: 25px;
     position: relative;
   }
   /* 知識文章標題 */
@@ -2597,14 +2614,14 @@
     div.item
     div.brand-news-contect-first-title {
     color: #626e45;
-    font-size: 17px;
+    font-size: 25px;
     font-weight: 400;
     border-radius: 9999px;
     background-color: #f1efe8;
     display: inline-block;
     padding: 5.5px 20px 7.5px 22px;
     margin-bottom: 25px;
-    width: 27%;
+    width: 22%;
   }
   /* 單篇新聞的標題 */
   body
@@ -2615,8 +2632,9 @@
     div.item
     div.brand-news-contect-sec-title {
     color: #626e45;
-    font-size: 24px;
+    font-size: 25px;
     font-weight: 500;
+    margin: 8px;
     letter-spacing: 2.4px;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -2630,12 +2648,12 @@
     div.brand-news-txtbox
     div.item
     div.brand-news-contect-txt {
-    font-size: 15px;
+    font-size: 20px;
     font-weight: 400;
     line-height: 1.866;
     letter-spacing: 1.95px;
     height: 56px;
-    margin-top: 8px;
+    margin: 8px;
     font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
     overflow: hidden;
   }
@@ -2647,6 +2665,7 @@
     div.brand-news-txtbox
     div.item
     div.image-box {
+    width: 650px;
     border-radius: 10% 10% 10% 10%;
     position: relative;
   }
@@ -2661,6 +2680,7 @@
     border-radius: 10% 10% 10% 10%;
     position: relative;
     z-index: 2;
+    width: 650px;
   }
   /* 圖片下的div背景，幫助item再hover時會有效過 */
   body
@@ -2830,7 +2850,8 @@
   body div.brand-news {
     background-image: url(../public/image/article_bg.png);
     padding: 100px 0 100px 0;
-    height: 1000px;
+    height: 1450px;
+    background-size: 100%;
     background-repeat: no-repeat;
   }
   /* 標題(含前後字) */
@@ -2988,7 +3009,9 @@
     div.brand-news-contect
     div.brand-news-txtbox
     div.item {
-    width: 35%;
+    width: 900px;
+    margin-left: 40px;
+    margin-right: 40px;
     height: 100%;
     position: relative;
   }
@@ -3001,14 +3024,14 @@
     div.item
     div.brand-news-contect-first-title {
     color: #626e45;
-    font-size: 17px;
+    font-size: 40px;
     font-weight: 400;
     border-radius: 9999px;
     background-color: #f1efe8;
     display: inline-block;
     padding: 5.5px 20px 7.5px 22px;
     margin-bottom: 25px;
-    width: 27%;
+    width: 23%;
   }
   /* 單篇新聞的標題 */
   body
@@ -3019,9 +3042,10 @@
     div.item
     div.brand-news-contect-sec-title {
     color: #626e45;
-    font-size: 24px;
+    font-size: 35px;
     font-weight: 500;
     letter-spacing: 2.4px;
+    margin: 8px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -3034,12 +3058,12 @@
     div.brand-news-txtbox
     div.item
     div.brand-news-contect-txt {
-    font-size: 15px;
+    font-size: 30px;
     font-weight: 400;
     line-height: 1.866;
     letter-spacing: 1.95px;
     height: 56px;
-    margin-top: 8px;
+    margin: 8px;
     font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
     overflow: hidden;
   }
@@ -3053,6 +3077,7 @@
     div.image-box {
     border-radius: 10% 10% 10% 10%;
     position: relative;
+    width: 900px;
   }
   body
     div.brand-news
@@ -3065,6 +3090,7 @@
     border-radius: 10% 10% 10% 10%;
     position: relative;
     z-index: 2;
+    width: 900px;
   }
   /* 圖片下的div背景，幫助item再hover時會有效過 */
   body
@@ -3112,7 +3138,7 @@
     div.page-number {
     width: 10%;
     margin: 10px;
-    font-size: 25px;
+    font-size: 40px;
     text-transform: uppercase;
     color: rgb(153, 153, 153);
   }
@@ -3123,9 +3149,9 @@
     div.brand-news-contect
     div.a
     progress {
-    margin: 10px;
-    height: 200px; /* 設定高度 */
-    width: 8px; /* 設定進度條的寬度 */
+    margin: 20px;
+    height: 280px; /* 設定高度 */
+    width: 15px; /* 設定進度條的寬度 */
     border-radius: 20px;
     background-color: #d4d5c7;
     appearance: none;
@@ -3175,8 +3201,8 @@
     div.pagebutton
     button.probtn,
   button.nextbtn {
-    width: 60px;
-    height: 60px;
+    width: 80px;
+    height: 80px;
     font-size: 32px;
     background: #626e45;
     color: white;

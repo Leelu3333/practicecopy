@@ -31,12 +31,13 @@ const productData = [
 
 const SericesProduct = () => {
   const [slides, setSlides] = useState([]); // 新陣列
-  const [currentIndex, setCurrentIndex] = useState(1.8); // 初始
-  const [slideWidth, setSlideWidth] = useState(319); // 用於存儲色塊的寬度，固定為 319px
-  const margin = 25; // 每個色塊的左右間距
+  const [currentIndex, setCurrentIndex] = useState(1.7); // 初始
   const carouselWrapperRef = useRef(null); // 參考容器
   const [isTransitioning, setIsTransitioning] = useState(true); // 控制動畫是否開啟
   const intervalRef = useRef(null); // 用來存儲 intervalID
+  const divRef = useRef(null);
+  const [elementWidth, setElementWidth] = useState(0);
+  const [elementMargin, setElementMargin] = useState(0);
 
   useEffect(() => {
     // 新陣列因為必須符合自動輪播視覺
@@ -62,26 +63,53 @@ const SericesProduct = () => {
     };
   }, []);
 
-  // 輪播移動的距離
+  useEffect(() => {
+    // 初始化幻燈片
+    // 添加短暫延遲確保元素已渲染
+    const initTimer = setTimeout(() => {
+      if (divRef.current) {
+        const style = window.getComputedStyle(divRef.current);
+        setElementWidth(parseFloat(style.width));
+        setElementMargin(parseFloat(style.margin));
+      }
+    }, 50);
+
+    return () => {
+      clearInterval(intervalRef.current);
+      clearTimeout(initTimer);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (divRef.current) {
+      const style = window.getComputedStyle(divRef.current);
+      setElementWidth(parseFloat(style.width));
+      setElementMargin(parseFloat(style.margin));
+    }
+  }, [slides]); // 當 slides 陣列更新後測量元素尺寸
+
   const getTransformStyle = () => {
     return {
-      transition: isTransitioning ? "transform 0.5s ease" : "none", // 根據 isTransitioning 控制動畫開關
-      transform: `translateX(-${currentIndex * (slideWidth + 2 * margin)}px)`, // 根據色塊寬度和間距來平移
+      transition: isTransitioning ? "transform 0.5s ease" : "none",
+      transform: `translateX(-${
+        currentIndex * (elementWidth + 2 * elementMargin)
+      }px)`,
     };
   };
 
   // 上個按鈕
   const goToPrevious = () => {
-    if (currentIndex <= 1.8) {
+    let fixedIndex = currentIndex.toFixed(1); // 保留一位小數
+    if (fixedIndex <= 1.7) {
       // 初始為1.8，按一下會回傳1.8並為新值0.8
       // 故回傳值為1.8等於要至陣列第0項
       setIsTransitioning(true); // 開啟動畫
-      setCurrentIndex(0.8); // 讓動畫走到 0 = 0.8
+      setCurrentIndex(0.7); // 讓動畫走到 0 = 0.8
 
       setTimeout(() => {
         setIsTransitioning(false); // 關閉動畫過渡
         // 因要無限輪播故關閉動畫直接跳至陣列後對應位置
-        setCurrentIndex(slides.length - 6 + 0.8); // 跳到新陣列所複製的第1個
+        setCurrentIndex(slides.length - 6 + 0.7); // 跳到新陣列所複製的第1個
       }, 500); // 停止動畫的時間長度，與動畫過渡時間相等
 
       // 延遲後重新開啟過渡
@@ -103,14 +131,14 @@ const SericesProduct = () => {
   // 下個按鈕
   const goToNext = () => {
     setCurrentIndex((prevIndex) => {
-      if (prevIndex == 6.8) {
+      if (prevIndex == 6.7) {
         // 到了新陣列複製的第一項要回1.7
         setIsTransitioning(true); // 開啟動畫
-        setCurrentIndex(7.8); // 讓動畫走到 7.8
+        setCurrentIndex(7.7); // 讓動畫走到 7.8
 
         setTimeout(() => {
           setIsTransitioning(false); // 關閉過渡效果
-          setCurrentIndex(1.8); // 跳回第 1 個
+          setCurrentIndex(1.7); // 跳回第 1 個
         }, 500); // 停止動畫的時間長度，與動畫過渡時間相等
 
         // 延遲後重新開啟過渡
@@ -132,10 +160,10 @@ const SericesProduct = () => {
 
   // 進度條數字 為符合就陣列有的資料數
   const calculateProgress = () => {
-    if (currentIndex === 0.8) return 6; // 當 currentIndex 為 0 時顯示 6
-    if (currentIndex === 7.8) return 1; // 當 currentIndex 為 7 時顯示 1
+    if (currentIndex == 0.7) return 6; // 當 currentIndex 為 0 時顯示 6
+    if (currentIndex == 7.7) return 1; // 當 currentIndex 為 7 時顯示 1
     // 計算進度條的值，從2開始有變化所以要-1.8
-    return ((currentIndex - 1.8) / (slides.length / 2 - 1)) * 6; // 計算進度條的值，從 6 減少到 1
+    return ((currentIndex - 1.7) / (slides.length / 2 - 1)) * 6; // 計算進度條的值，從 6 減少到 1
   };
 
   const handleMouseEnter = () => {
@@ -184,31 +212,14 @@ const SericesProduct = () => {
             {/* 遍歷陣列每一項 */}
             {/* 單篇產品 */}
             {slides.map((product, index) => (
-              <div
-                key={index}
-                className="item"
-                style={{
-                  width: `${slideWidth}px`, // 設置動態計算的寬度
-                  margin: `0 ${margin}px`, // 每個色塊的左右間距
-                }}
-              >
+              <div ref={divRef} key={index} className="item">
                 <div className="item-background"></div>
                 {/* 單篇產品圖片 */}
-                <div
-                  className="icon"
-                  style={{
-                    width: `${slideWidth}px`, // 設置動態計算的寬度
-                  }}
-                >
+                <div className="icon">
                   <img src={product.img} alt={product.txt} />
                 </div>
                 {/* 單篇產品內容 */}
-                <div
-                  className="txt"
-                  style={{
-                    width: `${slideWidth}px`, // 設置動態計算的寬度
-                  }}
-                >
+                <div className="txt">
                   {/* 單篇產品連結 */}
                   <div className="txt-link">
                     <a href="#">{">"}</a>
@@ -224,9 +235,9 @@ const SericesProduct = () => {
             {/* 顯示當前項目和總項目數 */}
             <div className="page-number">
               <span>
-                {currentIndex === 0.8
+                {currentIndex === 0.7
                   ? 6
-                  : currentIndex === 7.8
+                  : currentIndex === 7.7
                   ? 1
                   : Math.floor(currentIndex)}
               </span>{" "}

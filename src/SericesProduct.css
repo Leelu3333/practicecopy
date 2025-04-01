@@ -1437,6 +1437,8 @@
     position: relative;
     border-radius: 10% 10% 10% 10%;
     transition: transform 0.5s ease, background-color 0.5s ease;
+    width: 265px;
+    margin: 10px;
   }
   /* 單篇產品下的div背景，幫助item再hover時會有效過  */
   body
@@ -1467,6 +1469,7 @@
     border-radius: 10% 10% 10% 10%;
     overflow: hidden;
     transition: background-color 0.5s ease;
+    width: 265px;
   }
   /* 單篇產品連結在hover時會浮上 */
   body
@@ -1550,6 +1553,7 @@
     div.icon {
     border-radius: 10% 10% 10% 10%;
     overflow: hidden;
+    width: 265px;
   }
   body
     div.serices-product
@@ -1881,6 +1885,8 @@
     position: relative;
     border-radius: 10% 10% 10% 10%;
     transition: transform 0.5s ease, background-color 0.5s ease;
+    width: 300px;
+    margin: 20px;
   }
   /* 單篇產品下的div背景，幫助item再hover時會有效過  */
   body
@@ -1911,6 +1917,7 @@
     border-radius: 10% 10% 10% 10%;
     overflow: hidden;
     transition: background-color 0.5s ease;
+    width: 300px;
   }
   /* 單篇產品連結在hover時會浮上 */
   body
@@ -1973,7 +1980,7 @@
     p {
     display: flex;
     text-align: center;
-    font-size: 20px;
+    font-size: 25px;
     border-radius: 50% 50% 0 0;
     height: 30%;
     background-color: #ffffffb3;
@@ -1994,6 +2001,7 @@
     div.icon {
     border-radius: 10% 10% 10% 10%;
     overflow: hidden;
+    width: 300px;
   }
   body
     div.serices-product
@@ -2325,6 +2333,8 @@
     position: relative;
     border-radius: 10% 10% 10% 10%;
     transition: transform 0.5s ease, background-color 0.5s ease;
+    width: 365px;
+    margin: 20px;
   }
   /* 單篇產品下的div背景，幫助item再hover時會有效過  */
   body
@@ -2355,6 +2365,7 @@
     border-radius: 10% 10% 10% 10%;
     overflow: hidden;
     transition: background-color 0.5s ease;
+    width: 365px;
   }
   /* 單篇產品連結在hover時會浮上 */
   body
@@ -2417,7 +2428,7 @@
     p {
     display: flex;
     text-align: center;
-    font-size: 20px;
+    font-size: 30px;
     border-radius: 50% 50% 0 0;
     height: 30%;
     background-color: #ffffffb3;
@@ -2438,6 +2449,7 @@
     div.icon {
     border-radius: 10% 10% 10% 10%;
     overflow: hidden;
+    width: 365px;
   }
   body
     div.serices-product
@@ -2769,6 +2781,8 @@
     position: relative;
     border-radius: 10% 10% 10% 10%;
     transition: transform 0.5s ease, background-color 0.5s ease;
+    width: 470px;
+    margin: 25px;
   }
   /* 單篇產品下的div背景，幫助item再hover時會有效過  */
   body
@@ -2799,6 +2813,7 @@
     border-radius: 10% 10% 10% 10%;
     overflow: hidden;
     transition: background-color 0.5s ease;
+    width: 470px;
   }
   /* 單篇產品連結在hover時會浮上 */
   body
@@ -2861,7 +2876,7 @@
     p {
     display: flex;
     text-align: center;
-    font-size: 20px;
+    font-size: 36px;
     border-radius: 50% 50% 0 0;
     height: 30%;
     background-color: #ffffffb3;
@@ -2882,6 +2897,7 @@
     div.icon {
     border-radius: 10% 10% 10% 10%;
     overflow: hidden;
+    width: 470px;
   }
   body
     div.serices-product
@@ -3054,7 +3070,8 @@
   body div.serices-product {
     background-image: url(../public/image/pro_bg.png);
     padding: 100px 0 0 0;
-    height: 962px;
+    height: 1282px;
+    background-size: 100%;
     background-repeat: no-repeat;
   }
   /* 標題(含前後字) */
@@ -3213,6 +3230,8 @@
     position: relative;
     border-radius: 10% 10% 10% 10%;
     transition: transform 0.5s ease, background-color 0.5s ease;
+    width: 626px;
+    margin: 30px;
   }
   /* 單篇產品下的div背景，幫助item再hover時會有效過  */
   body
@@ -3243,6 +3262,7 @@
     border-radius: 10% 10% 10% 10%;
     overflow: hidden;
     transition: background-color 0.5s ease;
+    width: 626px;
   }
   /* 單篇產品連結在hover時會浮上 */
   body
@@ -3305,7 +3325,7 @@
     p {
     display: flex;
     text-align: center;
-    font-size: 20px;
+    font-size: 40px;
     border-radius: 50% 50% 0 0;
     height: 30%;
     background-color: #ffffffb3;
@@ -3326,6 +3346,7 @@
     div.icon {
     border-radius: 10% 10% 10% 10%;
     overflow: hidden;
+    width: 626px;
   }
   body
     div.serices-product
@@ -3422,8 +3443,8 @@
     div.aaa
     div.pagebutton
     button.probtn {
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 100px;
     font-size: 32px;
     background: #626e45;
     color: white;
@@ -3441,8 +3462,8 @@
     div.aaa
     div.pagebutton
     button.nextbtn {
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 100px;
     font-size: 32px;
     background: #626e45;
     color: white;
