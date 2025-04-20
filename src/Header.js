@@ -1,73 +1,85 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Header.css";
 
 const Header = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <header>
       {/* logo */}
-      <div class="logo">
+      <div className="logo">
         <a href="https://www.suisapet.com/">
           <img src="https://www.suisapet.com/images/logo.svg" alt="SUISA" />
         </a>
       </div>
+
+      {/* 漢堡選單按鈕 */}
+      {/* <div className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
+        &#9776;
+      </div> */}
+
       {/* 導覽列 */}
+      {/* <nav className={menuOpen ? "active" : ""}> */}
       <nav>
         <ul>
           <li>
             <a href="c.html">
-              <span class="a">品牌故事</span>
-              <span class="b">BRAND</span>
+              <span className="a">品牌故事</span>
+              <span className="b">BRAND</span>
             </a>
           </li>
           <li>
             <a href="c.html">
-              <span class="a">研發技術</span>
-              <span class="b">TECHNOLOGY</span>
+              <span className="a">研發技術</span>
+              <span className="b">TECHNOLOGY</span>
             </a>
           </li>
           <li>
             <a href="c.html">
-              <span class="a">產品介紹</span>
-              <span class="b">PRODUCTS</span>
+              <span className="a">產品介紹</span>
+              <span className="b">PRODUCTS</span>
             </a>
           </li>
           <li>
             <a href="c.html">
-              <span class="a">文章專欄</span>
-              <span class="b">ARTICLE</span>
+              <span className="a">文章專欄</span>
+              <span className="b">ARTICLE</span>
             </a>
           </li>
           <li>
             <a href="c.html">
-              <span class="a">購買據點</span>
-              <span class="b">LOCATIONS</span>
+              <span className="a">購買據點</span>
+              <span className="b">LOCATIONS</span>
             </a>
           </li>
           <li>
             <a href="c.html">
-              <span class="a">聯絡我們</span>
-              <span class="b">CONTACT</span>
+              <span className="a">聯絡我們</span>
+              <span className="b">CONTACT</span>
             </a>
           </li>
         </ul>
       </nav>
-      {/* 導覽列中語言及銷售通路 */}
-      <div class="languageandsales">
-        <div class="language">
-          <label for="state">
-            <div class="language-title">語言設定</div>
+      {/* 語言設定 & 銷售通路 */}
+      <div className="languageandsales">
+        {/* 語言設定 */}
+        <div className="language">
+          <label htmlFor="state">
+            <div className="language-title">語言設定</div>
           </label>
           <input type="checkbox" id="state" hidden />
-          <div class="language-content">
-            <div class="language-ch">
+          <div className="language-content">
+            <div className="language-ch">
               <p>繁體</p>
             </div>
-            <div class="language-en">
+            <div className="language-en">
               <p>英文</p>
             </div>
           </div>
         </div>
-        <a href="#footer-area" class="sales">
+
+        {/* 銷售通路 */}
+        <a href="#footer-area" className="sales">
           銷售通路
         </a>
       </div>

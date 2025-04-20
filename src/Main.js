@@ -37,8 +37,8 @@ const newsData = [
 
 const Main = () => {
   const [slides, setSlides] = useState([]); // 新陣列
-  const [currentIndex, setCurrentIndex] = useState(1.7); // 初始
   const carouselWrapperRef = useRef(null); // 參考容器
+  const [currentIndex, setCurrentIndex] = useState(1);
   const [isTransitioning, setIsTransitioning] = useState(true); // 控制動畫是否開啟
   const intervalRef = useRef(null); // 用來存儲 intervalID
   const divRef = useRef(null);
@@ -105,16 +105,16 @@ const Main = () => {
   // 上個按鈕
   const goToPrevious = () => {
     let fixedIndex = currentIndex.toFixed(1); // 保留一位小數
-    if (fixedIndex <= 1.7) {
+    if (fixedIndex <= 1) {
       // 初始為1.7，按一下會回傳1.7並為新值0.7
       // 故回傳值為1.7等於要至陣列第0項
       setIsTransitioning(true); // 開啟動畫
-      setCurrentIndex(0.7); // 讓動畫走到 0 = 0.7
+      setCurrentIndex(0); // 讓動畫走到 0 = 0.7
 
       setTimeout(() => {
         setIsTransitioning(false); // 關閉動畫過渡
         // 因要無限輪播故關閉動畫直接跳至陣列後對應位置
-        setCurrentIndex(slides.length - 6 + 0.7); // 跳到新陣列所複製的第1個
+        setCurrentIndex(slides.length - 6); // 跳到新陣列所複製的第1個
       }, 500); // 停止動畫的時間長度，與動畫過渡時間相等
 
       // 延遲後重新開啟動畫
@@ -136,14 +136,14 @@ const Main = () => {
   // 下個按鈕
   const goToNext = () => {
     setCurrentIndex((prevIndex) => {
-      if (prevIndex === 6.7) {
+      if (prevIndex === 6) {
         // 到了新陣列複製的第一項要回1.7
         setIsTransitioning(true); // 開啟動畫
-        setCurrentIndex(7.7); // 讓動畫走到 7.7
+        setCurrentIndex(7); // 讓動畫走到 7.7
 
         setTimeout(() => {
           setIsTransitioning(false); // 關閉過渡效果
-          setCurrentIndex(1.7); // 跳回第 1 個
+          setCurrentIndex(1); // 跳回第 1 個
         }, 500); // 停止動畫的時間長度，與動畫過渡時間相等
 
         // 延遲後重新開啟動畫
@@ -165,10 +165,10 @@ const Main = () => {
 
   // 進度條數字 為符合就陣列有的資料數
   const calculateProgress = () => {
-    if (currentIndex === 0.7) return 6; // 當 currentIndex 為 0 時顯示 6
-    if (currentIndex === 7.7) return 1; // 當 currentIndex 為 7 時顯示 1
+    if (currentIndex === 0) return 6; // 當 currentIndex 為 0 時顯示 6
+    if (currentIndex === 7) return 1; // 當 currentIndex 為 7 時顯示 1
     // 計算進度條的值，從2開始有變化所以要-1.7
-    return ((currentIndex - 1.7) / (slides.length / 2 - 1)) * 6;
+    return ((currentIndex - 1) / (slides.length / 2 - 1)) * 6;
   };
 
   const handleMouseEnter = () => {
@@ -240,7 +240,7 @@ const Main = () => {
               ))}
             </div>
             {/* 按鈕及進度條的div */}
-            <div className="a">
+            <div className="a-desktop">
               {/* 按鈕 */}
               <div className="pagebutton">
                 <button onClick={goToPrevious} className="probtn">
@@ -257,18 +257,31 @@ const Main = () => {
               {/* 顯示當前項目和總項目數 */}
               <div className="page-number">
                 <span>
-                  {currentIndex === 0.7
+                  {currentIndex === 0
                     ? 6
-                    : currentIndex === 7.7
+                    : currentIndex === 7
                     ? 1
                     : Math.floor(currentIndex)}
                 </span>{" "}
                 {/* 根據 currentIndex 顯示數字 */}
+                <br></br>
                 <span>/</span>
                 <br></br>
                 {/* 顯示總項目數，總數除以 2 */}
                 <span>{Math.floor(slides.length / 2)}</span>
               </div>
+            </div>
+            {/* 點點連結 */}
+            <div class="a-mobile">
+              {newsData.map((dot, index) => (
+                <span
+                  key={index}
+                  className={`dot ${
+                    currentIndex === index + 1 ? "active" : ""
+                  }`} // 當 currentIndex 與 index+1 相同時設置 active 類名
+                  onClick={() => setCurrentIndex(index + 1)} // 設定對應的索引，index + 1
+                ></span>
+              ))}
             </div>
           </div>
         </div>

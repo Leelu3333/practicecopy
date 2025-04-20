@@ -68,11 +68,12 @@ const shareData = [
 const Share = () => {
   const [slides, setSlides] = useState([]); // 新陣列
   const [currentIndex, setCurrentIndex] = useState(1); // 初始
-  const [slideWidth, setSlideWidth] = useState(300); // 用於存儲色塊的寬度，固定為 300px
-  const margin = 25; // 每個色塊的左右間距
   const carouselWrapperRef = useRef(null); // 參考容器
   const [isTransitioning, setIsTransitioning] = useState(true); // 控制動畫是否開啟
   const intervalRef = useRef(null); // 用來存儲 intervalID
+  const divRef = useRef(null);
+  const [elementWidth, setElementWidth] = useState(0);
+  const [elementMargin, setElementMargin] = useState(0);
 
   useEffect(() => {
     // 新陣列因為必須符合自動輪播視覺
@@ -96,11 +97,38 @@ const Share = () => {
     };
   }, []);
 
+  useEffect(() => {
+    // 初始化幻燈片
+    // 添加短暫延遲確保元素已渲染
+    const initTimer = setTimeout(() => {
+      if (divRef.current) {
+        const style = window.getComputedStyle(divRef.current);
+        setElementWidth(parseFloat(style.width));
+        setElementMargin(parseFloat(style.marginRight));
+      }
+    }, 50);
+
+    return () => {
+      clearInterval(intervalRef.current);
+      clearTimeout(initTimer);
+    };
+  }, []);
+
   // 輪播移動的距離
+  useEffect(() => {
+    if (divRef.current) {
+      const style = window.getComputedStyle(divRef.current);
+      setElementWidth(parseFloat(style.width));
+      setElementMargin(parseFloat(style.margin));
+    }
+  }, [slides]); // 當 slides 陣列更新後測量元素尺寸
+
   const getTransformStyle = () => {
     return {
-      transition: isTransitioning ? "transform 0.5s ease" : "none", // 根據 isTransitioning 控制動畫開關
-      transform: `translateX(-${currentIndex * (slideWidth + 2 * margin)}px)`, // 根據色塊寬度和間距來平移
+      transition: isTransitioning ? "transform 0.5s ease" : "none",
+      transform: `translateX(-${
+        currentIndex * (elementWidth + 2 * elementMargin)
+      }px)`,
     };
   };
 
@@ -207,14 +235,12 @@ const Share = () => {
             {/* 單篇心得 */}
             {slides.map((share, index) => (
               <div
+                ref={divRef}
                 key={index}
+                //className="OuterFrame"
                 className={`OuterFrame ${
                   currentIndex === index - 1 ? "active" : ""
                 }`}
-                style={{
-                  width: `${slideWidth}px`, // 設置動態計算的寬度
-                  margin: `${margin}px`, // 每個色塊的左右間距
-                }}
               >
                 {/* 在特定OuterFrame後+active 使CSS效過不同(讓特定心得為hover狀態) */}
                 <div className="item">
