@@ -7,19 +7,19 @@ const HeaderNav = ({ animateClass }) => {
       <div className="mobile-menu">
         <ul>
           <li>
-            <a href="c.html">
+            <a href="#">
               <span className="a">品牌故事</span>
               <span className="b">BRAND</span>
             </a>
           </li>
           <li>
-            <a href="c.html">
+            <a href="#">
               <span className="a">研發技術</span>
               <span className="b">TECHNOLOGY</span>
             </a>
           </li>
           <li>
-            <a href="c.html">
+            <a href="#">
               <span className="a">產品介紹</span>
               <span className="b">PRODUCTS</span>
             </a>
@@ -27,19 +27,19 @@ const HeaderNav = ({ animateClass }) => {
         </ul>
         <ul>
           <li>
-            <a href="c.html">
+            <a href="#">
               <span className="a">文章專欄</span>
               <span className="b">ARTICLE</span>
             </a>
           </li>
           <li>
-            <a href="c.html">
+            <a href="#">
               <span className="a">購買據點</span>
               <span className="b">LOCATIONS</span>
             </a>
           </li>
           <li>
-            <a href="c.html">
+            <a href="#">
               <span className="a">聯絡我們</span>
               <span className="b">CONTACT</span>
             </a>
