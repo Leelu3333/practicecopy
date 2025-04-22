@@ -8,8 +8,6 @@ import Share from "./Share";
 import Main from "./Main";
 import Footer from "./Footer";
 
-import Carousel from "./Carousel";
-
 function App() {
   return (
     <div>

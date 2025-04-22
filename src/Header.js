@@ -1,29 +1,25 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, lazy, Suspense } from "react";
 import "./Header.css";
+
+const HeaderNav = lazy(() => import("./HeaderNav"));
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [menuData, setMenuData] = useState([]);
+  const [animateClass, setAnimateClass] = useState("");
 
   const toggleMenu = () => {
-    setMenuOpen((prev) => !prev);
-  };
-
-  useEffect(() => {
-    if (menuOpen && menuData.length === 0) {
-      // 模擬 AJAX 載入（可以改成 fetch 實際 API）
+    if (!menuOpen) {
+      setMenuOpen(true);
+      setAnimateClass("slide-down");
+    } else {
+      // 換成 slide-up，動畫結束再隱藏
+      setAnimateClass("slide-up");
       setTimeout(() => {
-        setMenuData([
-          { zh: "品牌故事", en: "BRAND", href: "c.html" },
-          { zh: "研發技術", en: "TECHNOLOGY", href: "c.html" },
-          { zh: "產品介紹", en: "PRODUCTS", href: "c.html" },
-          { zh: "文章專欄", en: "ARTICLE", href: "c.html" },
-          { zh: "購買據點", en: "LOCATIONS", href: "c.html" },
-          { zh: "聯絡我們", en: "CONTACT", href: "c.html" },
-        ]);
-      }, 500); // 模擬 loading
+        setMenuOpen(false);
+      }, 400); // 跟動畫時間一致
     }
-  }, [menuOpen]);
+  };
+  const closeMenu = () => setMenuOpen(false);
 
   return (
     <header>
@@ -124,28 +120,16 @@ const Header = () => {
         </div>
         <div className="rightbox">
           {/* 漢堡選單按鈕 */}
-          <div className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
+          <div className="menu-toggle" onClick={toggleMenu}>
             &#9776;
           </div>
-
-          {/* 導覽列 */}
-          <nav className={menuOpen ? "active" : ""}>
-            {menuOpen && menuData.length > 0 ? (
-              <ul>
-                {menuData.map((item, i) => (
-                  <li key={i}>
-                    <a href={item.href} onClick={() => setMenuOpen(false)}>
-                      <span className="a">{item.zh}</span>
-                      <span className="b">{item.en}</span>
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            ) : menuOpen ? (
-              <div className="loading">載入中...</div>
-            ) : null}
-          </nav>
         </div>
+        {/* 懶載入的選單元件 */}
+        {menuOpen && (
+          <Suspense>
+            <HeaderNav animateClass={animateClass} />
+          </Suspense>
+        )}
       </div>
     </header>
   );
