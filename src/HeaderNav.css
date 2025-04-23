@@ -94,3 +94,9 @@ body
     opacity: 0;
   }
 }
+@media (min-width: 320px) and (orientation: landscape) {
+  body header div.moblie div.mobile-menu-container div.mobile-menu {
+    height: 99vh;
+    padding: 4rem 4rem 0rem 2rem;
+  }
+}

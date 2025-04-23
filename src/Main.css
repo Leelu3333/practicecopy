@@ -1,4 +1,4 @@
-@media (min-width: 0px) {
+@media (min-width: 320px) {
   body div.brand-news {
     background-image: url(../public/image/article_bg.png);
     padding: 100px 0 100px 0;
@@ -320,6 +320,40 @@
     }
   }
 }
+
+@media (min-width: 320px) and (orientation: landscape) {
+  body
+    div.brand-news
+    div.brand-news-title
+    div.brand-news-tit
+    div.brand-news-fort-title
+    div.footline
+    div.foot {
+    height: 250%;
+    width: 100%;
+    background-size: 100%;
+  }
+  body
+    div.brand-news
+    div.brand-news-title
+    div.brand-news-tit
+    div.brand-news-fort-title
+    div.footline
+    div.line {
+    height: 200%;
+    width: 100%;
+    background-size: 100%;
+  }
+  body
+    div.brand-news
+    div.brand-news-title
+    div.brand-news-tit
+    div.brand-news-fort-title
+    h2 {
+    width: 40%;
+  }
+}
+
 @media (min-width: 768px) {
   body div.brand-news {
     background-image: url(../public/image/article_bg.png);
@@ -424,7 +458,6 @@
   }
   /* 內容 */
   body div.brand-news div.brand-news-allcontect {
-    padding: 0 70px;
     width: 100%;
     height: 80%;
   }
@@ -640,6 +673,67 @@
       clip-path: inset(0 0 0 0); /* 100% 時，圖片保持顯示 */
       opacity: 0; /* 圖片慢慢變透明 */
     }
+  }
+}
+
+@media (min-width: 768px) and (orientation: landscape) {
+  body
+    div.brand-news
+    div.brand-news-title
+    div.brand-news-tit
+    div.brand-news-fort-title
+    div.footline
+    div.foot {
+    height: 250%;
+    width: 100%;
+  }
+  body
+    div.brand-news
+    div.brand-news-title
+    div.brand-news-tit
+    div.brand-news-fort-title
+    div.footline
+    div.line {
+    height: 200%;
+    width: 100%;
+  }
+
+  body
+    div.brand-news
+    div.brand-news-allcontect
+    div.brand-news-contect
+    div.brand-news-txtbox
+    div.item {
+    width: 240px;
+    margin: 15px;
+  }
+  body
+    div.brand-news
+    div.brand-news-allcontect
+    div.brand-news-contect
+    div.brand-news-txtbox
+    div.item
+    div.brand-news-contect-first-title {
+    width: 46%;
+  }
+  body
+    div.brand-news
+    div.brand-news-allcontect
+    div.brand-news-contect
+    div.brand-news-txtbox
+    div.item
+    div.icon
+    img {
+    width: 240px;
+  }
+  body
+    div.brand-news
+    div.brand-news-allcontect
+    div.brand-news-contect
+    div.brand-news-txtbox
+    div.item
+    div.image-background {
+    width: 240px;
   }
 }
 @media (min-width: 992px) {
