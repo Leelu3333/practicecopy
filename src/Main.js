@@ -44,6 +44,27 @@ const Main = () => {
   const divRef = useRef(null);
   const [elementWidth, setElementWidth] = useState(0);
   const [elementMargin, setElementMargin] = useState(0);
+  const [startX, setStartX] = useState(0); // 記錄滑鼠/觸摸開始位置
+  const [moveX, setMoveX] = useState(0); // 記錄滑動過程中的距離
+  const [isTouching, setIsTouching] = useState(false);
+  const [isJumping, setIsJumping] = useState(false);
+  const [isWideScreen, setIsWideScreen] = useState(false); // 監控視窗是否大於992
+
+  useEffect(() => {
+    // 監控視窗大小變化
+    const handleResize = () => {
+      setIsWideScreen(window.innerWidth > 992); // 設定 isWideScreen，根據視窗寬度判斷
+    };
+
+    // 初次執行時和每次視窗大小變化時更新
+    window.addEventListener("resize", handleResize);
+    handleResize(); // 初始檢查視窗大小
+
+    // 清理事件監聽器
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   useEffect(() => {
     const clonedSlides = [
@@ -104,12 +125,12 @@ const Main = () => {
 
   // 上個按鈕
   const goToPrevious = () => {
-    let fixedIndex = currentIndex.toFixed(1); // 保留一位小數
-    if (fixedIndex <= 1) {
+    if (currentIndex <= 1) {
       // 初始為1.7，按一下會回傳1.7並為新值0.7
       // 故回傳值為1.7等於要至陣列第0項
       setIsTransitioning(true); // 開啟動畫
       setCurrentIndex(0); // 讓動畫走到 0 = 0.7
+      setIsJumping(true); // 標記為補跳轉
 
       setTimeout(() => {
         setIsTransitioning(false); // 關閉動畫過渡
@@ -120,6 +141,7 @@ const Main = () => {
       // 延遲後重新開啟動畫
       setTimeout(() => {
         setIsTransitioning(true); // 開啟動畫過渡
+        setIsJumping(false); // 補跳轉結束
       }, 600); // 重新開啟動畫的延遲時間（稍微長於 600ms 來確保狀態更新）
     } else {
       // 如果不是在 1.7，直接-1至對應位置
@@ -140,6 +162,7 @@ const Main = () => {
         // 到了新陣列複製的第一項要回1.7
         setIsTransitioning(true); // 開啟動畫
         setCurrentIndex(7); // 讓動畫走到 7.7
+        setIsJumping(true); // 標記為補跳轉
 
         setTimeout(() => {
           setIsTransitioning(false); // 關閉過渡效果
@@ -149,6 +172,7 @@ const Main = () => {
         // 延遲後重新開啟動畫
         setTimeout(() => {
           setIsTransitioning(true); // 開啟動畫過渡
+          setIsJumping(false); // 補跳轉結束
         }, 600); // 重新開啟動畫的延遲時間（稍微長於 600ms 來確保狀態更新）
       } else {
         // 如果不是在 6.7，直接+1至對應位置
@@ -171,16 +195,135 @@ const Main = () => {
     return ((currentIndex - 1) / (slides.length / 2 - 1)) * 6;
   };
 
+  // 處理滑鼠按下
+  const handleMouseDown = (e) => {
+    e.stopPropagation();
+    setStartX(e.clientX);
+    setIsTransitioning(false); // 禁止過渡效果，允許自由滑動
+    // 禁用選取
+    document.body.style.userSelect = "none";
+  };
+
+  // 處理滑鼠移動
+  const handleMouseMove = (e) => {
+    if (startX === 0) return; // 如果未開始拖動，則跳過
+    const distance = startX - e.clientX;
+    setMoveX(distance);
+    // 禁用所有 <a> 標籤的點擊事件
+    const links = document.querySelectorAll("a");
+    links.forEach((link) => {
+      link.style.pointerEvents = "none"; // 禁用點擊
+    });
+  };
+
+  // 處理滑鼠放開
+  const handleMouseUp = () => {
+    if (moveX > 100) {
+      goToNext();
+    } else if (moveX < -100) {
+      goToPrevious();
+    }
+    clearInterval(intervalRef.current);
+    setMoveX(0); // 重置滑動距離
+    setIsTransitioning(true); // 恢復過渡效果
+    setStartX(0); // 重置起始位置
+    // 恢復選取
+    document.body.style.userSelect = "auto";
+    // 恢復 <a> 標籤的點擊事件
+    const links = document.querySelectorAll("a");
+    links.forEach((link) => {
+      link.style.pointerEvents = "auto"; // 恢復點擊
+    });
+  };
+
   const handleMouseEnter = () => {
     // 滑鼠到就停止自動輪播
     clearInterval(intervalRef.current);
   };
 
-  const handleMouseLeave = () => {
-    // 滑鼠離開就重新開始自動輪播
-    intervalRef.current = setInterval(() => {
+  const handleMouseLeave = (e) => {
+    // 確保只有滑鼠離開整個區域時才執行
+    if (moveX !== 0) handleMouseUp();
+
+    // 當 e.relatedTarget 為 null 時，表示滑鼠移出了視窗，我們可以重新啟動自動輪播
+    if (e.relatedTarget === null) {
+      // 重新啟動自動輪播
+      intervalRef.current = setInterval(() => {
+        goToNext(); // 自動切換到下一個
+      }, 5000); // 每 5 秒切換一次
+      return; // 直接返回，不執行其他的處理
+    }
+
+    // 檢查 e.relatedTarget 是否為有效的 DOM 元素，並且滑鼠是否離開 carouselWrapperRef 範圍
+    if (
+      e.relatedTarget &&
+      e.relatedTarget instanceof Node && // 確保 relatedTarget 是有效的 Node 類型
+      !carouselWrapperRef.current.contains(e.relatedTarget) // 滑鼠離開 carouselWrapperRef 範圍
+    ) {
+      // 重新啟動自動輪播
+      intervalRef.current = setInterval(() => {
+        goToNext(); // 自動切換到下一個
+      }, 5000); // 每 5 秒切換一次
+    }
+  };
+
+  // 觸控開始事件
+  const handleTouchStart = (e) => {
+    e.stopPropagation(); // 避免傳到外層造成雙重執行
+    setIsTouching(true);
+    setStartX(e.touches[0].clientX); // 用 touches[0] 來獲取第一個觸控點的位置
+    setIsTransitioning(false); // 禁用過渡效果
+    // 禁用選取
+    document.body.style.userSelect = "none";
+  };
+
+  // 觸控移動事件
+  const handleTouchMove = (e) => {
+    e.stopPropagation();
+    if (startX === 0) return; // 如果未開始拖動，則跳過
+    const distance = startX - e.touches[0].clientX; // 使用 touches[0] 來獲取觸控移動的距離
+    setMoveX(distance);
+    // 禁用所有 <a> 標籤的點擊事件
+    const links = document.querySelectorAll("a");
+    links.forEach((link) => {
+      link.style.pointerEvents = "none"; // 禁用點擊
+    });
+  };
+
+  // 觸控結束事件
+  const handleTouchEnd = (e) => {
+    e.stopPropagation();
+    setIsTouching(false);
+
+    if (moveX > 50) {
       goToNext();
-    }, 5000);
+    } else if (moveX < -50) {
+      goToPrevious();
+    }
+    setMoveX(0);
+    setIsTransitioning(true);
+    setStartX(0);
+    // 恢復選取
+    document.body.style.userSelect = "auto";
+    // 恢復 <a> 標籤的點擊事件
+    const links = document.querySelectorAll("a");
+    links.forEach((link) => {
+      link.style.pointerEvents = "auto"; // 恢復點擊
+    });
+  };
+
+  // 觸控取消事件
+  const handleTouchCancel = () => {
+    setMoveX(0);
+    setStartX(0);
+    setIsTransitioning(true);
+    // 恢復選取
+    document.body.style.userSelect = "auto";
+    // 恢復 <a> 標籤的點擊事件
+    const links = document.querySelectorAll("a");
+    links.forEach((link) => {
+      link.style.pointerEvents = "auto"; // 恢復點擊
+    });
   };
 
   return (
@@ -215,11 +358,32 @@ const Main = () => {
               style={getTransformStyle()}
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
+              onMouseDown={handleMouseDown}
+              onMouseMove={handleMouseMove}
+              onMouseUp={handleMouseUp}
+              onTouchStart={handleTouchStart} // 增加觸控開始事件
+              onTouchMove={handleTouchMove} // 增加觸控移動事件
+              onTouchEnd={handleTouchEnd} // 增加觸控結束事件
+              onTouchCancel={handleTouchCancel} // 增加觸控取消事件
             >
               {/* 遍歷陣列每一項 */}
               {/* 單篇新聞 */}
               {slides.map((newItem, index) => (
-                <div ref={divRef} key={index} className="item">
+                <div
+                  ref={divRef}
+                  key={index}
+                  onMouseDown={handleMouseDown}
+                  onMouseMove={handleMouseMove}
+                  onTouchStart={handleTouchStart} // 增加觸控開始事件
+                  onTouchMove={handleTouchMove} // 增加觸控移動事件
+                  onTouchEnd={handleTouchEnd} // 增加觸控結束事件
+                  onTouchCancel={handleTouchCancel} // 增加觸控取消事件
+                  className={`item ${
+                    !isJumping && index === currentIndex && !isWideScreen
+                      ? "active"
+                      : ""
+                  }`}
+                >
                   <div className="brand-news-contect-first-title">知識文章</div>
                   {/* 單篇新聞標題 */}
                   <div className="brand-news-contect-sec-title">
@@ -233,7 +397,9 @@ const Main = () => {
                   <div className="image-box">
                     <div className="image-background"></div>
                     <div className="icon">
-                      <img src={newItem.img} alt="" />
+                      <a href="#">
+                        <img src={newItem.img} alt="" draggable="false" />
+                      </a>
                     </div>
                   </div>
                 </div>

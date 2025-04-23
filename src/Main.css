@@ -238,7 +238,7 @@
     div.brand-news-allcontect
     div.brand-news-contect
     div.brand-news-txtbox
-    div.item:hover
+    div.item.active
     div.image-background {
     background-color: #7c8b57a1;
     transform: rotate(-5deg);
@@ -560,7 +560,7 @@
     div.brand-news-allcontect
     div.brand-news-contect
     div.brand-news-txtbox
-    div.item:hover
+    div.item.active
     div.image-background {
     background-color: #7c8b57a1;
     transform: rotate(-5deg);
