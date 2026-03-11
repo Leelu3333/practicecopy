@@ -1,4 +1,6 @@
-# Getting Started with Create React App
+# 練習全手刻的仿製網站
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
